@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { business, contact, services } from "@/lib/content";
-import { telHref, mailHref } from "@/lib/links";
+import { telHref, mailHref, emailReady } from "@/lib/links";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -12,6 +12,7 @@ export default function Footer() {
           <div>
             <p className="font-heading text-lg font-semibold text-white">{business.name}</p>
             <p className="mt-2 text-sm">{business.tagline}</p>
+            <p className="mt-4 text-xs text-white/50">Owned &amp; operated by {business.owner}</p>
           </div>
 
           <div>
@@ -22,11 +23,13 @@ export default function Footer() {
                   {contact.phone}
                 </a>
               </li>
-              <li>
-                <a href={mailHref} className="hover:text-terracotta">
-                  {contact.email}
-                </a>
-              </li>
+              {emailReady && (
+                <li>
+                  <a href={mailHref} className="hover:text-terracotta">
+                    {contact.email}
+                  </a>
+                </li>
+              )}
               <li>
                 <a
                   href={business.instagramUrl}

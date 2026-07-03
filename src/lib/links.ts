@@ -11,8 +11,8 @@ export const whatsappHref = contact.whatsappDigits
   ? `https://wa.me/${contact.whatsappDigits}`
   : "https://wa.me/";
 
-export const mailHref = contact.email.startsWith("[CONFIRM") ? "#" : `mailto:${contact.email}`;
+export const emailReady = Boolean(contact.email);
+export const mailHref = emailReady ? `mailto:${contact.email}` : "#";
 
 export const contactReady = Boolean(contact.phoneDigits);
 export const whatsappReady = Boolean(contact.whatsappDigits);
-export const emailReady = !contact.email.startsWith("[CONFIRM");

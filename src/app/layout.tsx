@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
-import { business } from "@/lib/content";
+import { business, contact } from "@/lib/content";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -21,15 +21,13 @@ const siteUrl = `https://${business.domain}`;
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${business.name} | Resin Bound Driveways & Patios — [CONFIRM: Area], Ireland`,
+    default: `${business.name} | Resin Bound Driveways & Patios — ${contact.areaServed}`,
     template: `%s | ${business.name}`,
   },
-  description:
-    "Resin bound driveways, patios, and pathways in [CONFIRM: service area], Ireland. Smooth, permeable, low-maintenance surfacing — get a free quote.",
+  description: `Resin bound driveways, patios, and pathways in ${contact.areaServed}, Ireland. Smooth, permeable, low-maintenance surfacing — get a free quote.`,
   openGraph: {
     title: `${business.name} | Resin Bound Driveways & Patios`,
-    description:
-      "Resin bound driveways, patios, and pathways in [CONFIRM: service area], Ireland. Get a free quote.",
+    description: `Resin bound driveways, patios, and pathways in ${contact.areaServed}, Ireland. Get a free quote.`,
     url: siteUrl,
     siteName: business.name,
     images: ["/images/stock/hero-driveway.jpg"],
@@ -38,14 +36,13 @@ export const metadata: Metadata = {
   },
 };
 
-// LocalBusiness structured data — intentionally omits telephone and
-// areaServed until Derek confirms them. Do not fill these with placeholder
-// strings; invalid data here can actively hurt SEO. Add them back once real.
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: business.name,
   url: siteUrl,
+  telephone: `+${contact.phoneDigits}`,
+  areaServed: contact.areaServed,
   sameAs: [business.instagramUrl],
 };
 

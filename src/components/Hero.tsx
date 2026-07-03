@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-[92vh] items-end overflow-hidden bg-charcoal text-white lg:min-h-[85vh] lg:items-center">
       {/* Stock placeholder — Unsplash, licensed for commercial use, photo by GoodLifeConstruction
-          (https://unsplash.com/@goodlifeconstruction). Swap for Derek's own hero photo/video when supplied. */}
+          (https://unsplash.com/@goodlifeconstruction). Swap for a real hero photo/video when supplied. */}
       <Image
         src="/images/stock/hero-driveway.jpg"
         alt="Modern house exterior with a wide, smooth concrete-style driveway in natural daylight"
@@ -26,8 +26,8 @@ export default function Hero() {
           Premium Resin Bound Surfaces, Fitted Right
         </h1>
         <p className="mt-5 max-w-xl text-lg text-white/85 sm:text-xl">
-          Smooth, permeable, low-maintenance surfacing for driveways, patios, and pathways —{" "}
-          <span className="italic">[CONFIRM: service area — likely Carrigallen / South Leitrim]</span>.
+          Smooth, permeable, low-maintenance surfacing for driveways, patios, and pathways, based in{" "}
+          {contact.areaServed}.
         </p>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -43,7 +43,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="flex min-h-[52px] items-center justify-center gap-2 rounded-full border border-white/40 px-8 text-base font-semibold text-white transition-colors hover:bg-white/10 active:scale-[0.98]"
           >
-            WhatsApp Derek
+            WhatsApp Us
           </a>
         </div>
 

@@ -1,7 +1,4 @@
 // Single source of truth for all editable site content.
-// Anything wrapped in [CONFIRM: ...] is an unverified fact and must be
-// replaced with real information from Derek before launch.
-// Search the codebase for "[CONFIRM" to find every outstanding item.
 
 export const business = {
   name: "Carraig Álainn Resin Surfaces",
@@ -13,31 +10,26 @@ export const business = {
   instagramUrl: "https://www.instagram.com/derekdeane.resinbound",
 };
 
-// Single source of truth for contact details. Update these three values
-// once Derek confirms them and every call/WhatsApp/email link on the site
-// updates automatically.
+// Single source of truth for contact details. Update these values and every
+// call/WhatsApp/email link on the site updates automatically.
 export const contact = {
   phone: "086 872 5193",
-  // Digits-only version for tel:/wa.me links, e.g. "353871234567". Leave
-  // blank until confirmed so we don't ship a broken/placeholder link.
+  // Digits-only version for tel:/wa.me links, e.g. "353871234567".
   phoneDigits: "353868725193",
   whatsappDigits: "353868725193",
-  email: "[CONFIRM: email address]",
-  areaServed: "[CONFIRM: exact service area — likely Carrigallen / South Leitrim, verify with Derek]",
+  // Leave blank until a real address exists — the email button hides itself
+  // rather than showing a broken link.
+  email: "",
+  areaServed: "Carraig, Co. Tipperary",
+  mapQuery: "Carraig, Co. Tipperary, Ireland",
 };
 
-export type ServiceId =
-  | "driveways"
-  | "patios"
-  | "pathways"
-  | "repairs"
-  | "commercial";
+export type ServiceId = "driveways" | "patios" | "pathways";
 
 export interface Service {
   id: ServiceId;
   title: string;
   description: string;
-  confirmed: boolean;
 }
 
 export const services: Service[] = [
@@ -46,35 +38,18 @@ export const services: Service[] = [
     title: "Resin Bound Driveways",
     description:
       "A smooth, permeable, seamless finish that transforms a tired gravel, tarmac, or concrete driveway — resists weeds, moss, and cracking.",
-    confirmed: true,
   },
   {
     id: "patios",
     title: "Resin Bound Patios",
     description:
       "A durable, slip-resistant surface for patios and outdoor living areas, laid smooth with no loose stones underfoot.",
-    confirmed: true,
   },
   {
     id: "pathways",
     title: "Pathways & Garden Surfacing",
     description:
       "Neat, low-maintenance paths and garden surfacing that tie the rest of the property together.",
-    confirmed: true,
-  },
-  {
-    id: "repairs",
-    title: "Repairs & Resurfacing",
-    description:
-      "[CONFIRM: does Derek offer repair/resurfacing work on existing resin, tarmac, or concrete surfaces?]",
-    confirmed: false,
-  },
-  {
-    id: "commercial",
-    title: "Commercial Resin Surfacing",
-    description:
-      "[CONFIRM: does Derek take on commercial/business premises work, or residential only?]",
-    confirmed: false,
   },
 ];
 
@@ -82,40 +57,39 @@ export interface Project {
   id: string;
   title: string;
   surfaceType: ServiceId;
-  // Paths are placeholders until Derek supplies real project photos.
+  // Paths are placeholders until real project photos are added.
   beforeImage: string | null;
   afterImage: string | null;
   description: string;
 }
 
-// No real completed-project photos have been supplied yet. Each entry is a
-// labelled placeholder slot — replace beforeImage/afterImage with real photo
-// paths (e.g. "/images/projects/kilkenny-driveway-after.jpg") as Derek sends
-// them, and this component needs no other changes.
+// No completed-project photos loaded yet. Replace beforeImage/afterImage
+// with real photo paths (e.g. "/images/projects/driveway-1-after.jpg") as
+// they come in — the gallery needs no other changes.
 export const projects: Project[] = [
   {
-    id: "placeholder-1",
-    title: "[PLACEHOLDER: project title, e.g. \"Driveway, Carrigallen\"]",
+    id: "project-1",
+    title: "Resin Bound Driveway",
     surfaceType: "driveways",
     beforeImage: null,
     afterImage: null,
-    description: "[PLACEHOLDER: short description once photo is supplied]",
+    description: "",
   },
   {
-    id: "placeholder-2",
-    title: "[PLACEHOLDER: project title]",
+    id: "project-2",
+    title: "Resin Bound Patio",
     surfaceType: "patios",
     beforeImage: null,
     afterImage: null,
-    description: "[PLACEHOLDER: short description once photo is supplied]",
+    description: "",
   },
   {
-    id: "placeholder-3",
-    title: "[PLACEHOLDER: project title]",
+    id: "project-3",
+    title: "Pathway & Garden Surfacing",
     surfaceType: "pathways",
     beforeImage: null,
     afterImage: null,
-    description: "[PLACEHOLDER: short description once photo is supplied]",
+    description: "",
   },
 ];
 
@@ -126,17 +100,9 @@ export interface Testimonial {
   rating: number;
 }
 
-// Ready to receive real client reviews. The single entry below is an
-// explicitly-labelled placeholder, not a fabricated review — replace it (or
-// add more) once Derek shares real feedback, and remove it if none exist yet.
-export const testimonials: Testimonial[] = [
-  {
-    id: "placeholder-1",
-    name: "[PLACEHOLDER: client name]",
-    quote: "[PLACEHOLDER — insert real client review once supplied]",
-    rating: 0,
-  },
-];
+// Empty until real client reviews are added — the section hides itself
+// rather than showing a placeholder.
+export const testimonials: Testimonial[] = [];
 
 export interface ProcessStep {
   step: number;
@@ -148,12 +114,12 @@ export const processSteps: ProcessStep[] = [
   {
     step: 1,
     title: "Get in touch",
-    description: "Call, WhatsApp, or send the quote form with a few details about your project.",
+    description: "Call or WhatsApp with a few details about your project.",
   },
   {
     step: 2,
     title: "Site visit & measure-up",
-    description: "Derek calls out to measure up and talk through finishes and colour options in person.",
+    description: "A site visit to measure up and talk through finishes and colour options in person.",
   },
   {
     step: 3,
@@ -186,7 +152,7 @@ export const faqs: Faq[] = [
   {
     question: "Do I need to remove my existing driveway first?",
     answer:
-      "[CONFIRM: does Derek install over existing suitable surfaces, or does every job require full excavation?]",
+      "In many cases resin bound surfacing can be laid over a suitable existing surface — get in touch and we can advise after a site visit.",
   },
 ];
 
@@ -201,12 +167,12 @@ export const whyUsPoints = [
   },
   {
     title: "Natural stone blends",
-    description: "[CONFIRM: exact colour/aggregate range Derek offers]",
+    description: "A range of natural stone blends to suit any property.",
   },
   {
     title: "Personal, local service",
     description:
-      "[CONFIRM: solo operator vs team — copy currently assumes Derek is hands-on from quote to finish]",
+      "You deal directly with the same person from your first enquiry through to the finished job — no call centres, no middlemen.",
   },
 ];
 

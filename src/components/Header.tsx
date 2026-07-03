@@ -99,7 +99,7 @@ export default function Header() {
               rel="noopener noreferrer"
               className="flex min-h-[44px] items-center justify-center rounded-full bg-moss px-5 text-base font-semibold text-white"
             >
-              WhatsApp Derek
+              WhatsApp Us
             </a>
             <Link
               href="/#contact"

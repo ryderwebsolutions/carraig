@@ -21,11 +21,7 @@ export default function Services() {
                   <h3 className="font-heading text-lg font-semibold text-charcoal sm:text-xl">
                     {service.title}
                   </h3>
-                  <p
-                    className={`mt-1.5 max-w-2xl text-[15px] leading-relaxed sm:text-base ${
-                      service.confirmed ? "text-charcoal/70" : "text-charcoal/40"
-                    }`}
-                  >
+                  <p className="mt-1.5 max-w-2xl text-[15px] leading-relaxed text-charcoal/70 sm:text-base">
                     {service.description}
                   </p>
                 </div>

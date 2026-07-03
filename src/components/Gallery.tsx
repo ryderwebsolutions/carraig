@@ -23,8 +23,7 @@ export default function Gallery({ showHeading = true }: { showHeading?: boolean 
               Recent Projects
             </h2>
             <p className="mt-3 max-w-xl text-charcoal/70">
-              Real finished jobs go here as Derek sends them through — this gallery is reserved for
-              genuine completed work, never stock photography.
+              A selection of completed driveways, patios, and pathways.
             </p>
           </FadeUp>
         )}
@@ -79,7 +78,9 @@ export default function Gallery({ showHeading = true }: { showHeading?: boolean 
                 </div>
                 <div className="p-4">
                   <h3 className="font-heading text-base font-semibold text-charcoal">{project.title}</h3>
-                  <p className="mt-1 text-sm text-charcoal/60">{project.description}</p>
+                  {project.description && (
+                    <p className="mt-1 text-sm text-charcoal/60">{project.description}</p>
+                  )}
                 </div>
               </button>
             </FadeUp>
@@ -136,7 +137,9 @@ export default function Gallery({ showHeading = true }: { showHeading?: boolean 
             </div>
             <div className="p-5">
               <h3 className="font-heading text-lg font-semibold text-charcoal">{activeProject.title}</h3>
-              <p className="mt-1 text-sm text-charcoal/60">{activeProject.description}</p>
+              {activeProject.description && (
+                <p className="mt-1 text-sm text-charcoal/60">{activeProject.description}</p>
+              )}
             </div>
           </div>
         </div>

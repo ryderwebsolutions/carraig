@@ -9,7 +9,7 @@ export default function WhyUs() {
         <FadeUp>
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
             {/* Stock placeholder — Unsplash, licensed for commercial use, photo by Joshua Hoehne
-                (https://unsplash.com/@joshua_hoehne). Swap for Derek's own close-up aggregate photo. */}
+                (https://unsplash.com/@joshua_hoehne). Swap for a real close-up aggregate photo. */}
             <Image
               src="/images/stock/aggregate-texture.jpg"
               alt="Close-up of natural stone aggregate, similar to resin bound surfacing material"
