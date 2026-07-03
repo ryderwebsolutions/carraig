@@ -6,11 +6,11 @@ import { telHref, whatsappHref } from "@/lib/links";
 export default function Hero() {
   return (
     <section className="relative flex min-h-[92vh] items-end overflow-hidden bg-charcoal text-white lg:min-h-[85vh] lg:items-center">
-      {/* Stock placeholder — Unsplash, licensed for commercial use, photo by Zac Gudakov
-          (https://unsplash.com/@zacgudakov). Swap for Derek's own hero photo/video when supplied. */}
+      {/* Stock placeholder — Unsplash, licensed for commercial use, photo by GoodLifeConstruction
+          (https://unsplash.com/@goodlifeconstruction). Swap for Derek's own hero photo/video when supplied. */}
       <Image
         src="/images/stock/hero-driveway.jpg"
-        alt="Modern house exterior with a smooth resin-style driveway in natural daylight"
+        alt="Modern house exterior with a wide, smooth concrete-style driveway in natural daylight"
         fill
         priority
         sizes="100vw"
