@@ -36,6 +36,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# raw client media dumps — real assets are copied into public/ once selected;
+# this folder also holds reference/competitor screenshots not meant for publishing
+/content/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

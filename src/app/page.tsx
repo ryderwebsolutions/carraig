@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex-1 pb-16 lg:pb-0">
+      <main id="main-content" className="flex-1 pb-16 lg:pb-0">
         <Hero />
         <Services />
         <Gallery />

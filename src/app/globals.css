@@ -63,6 +63,12 @@ h1, h2, h3, h4 {
   }
 }
 
+/* Visible keyboard focus ring, consistent across the site */
+:focus-visible {
+  outline: 2px solid var(--color-terracotta);
+  outline-offset: 2px;
+}
+
 /* Utility for hiding scrollbars on horizontal filter chips */
 .no-scrollbar::-webkit-scrollbar {
   display: none;

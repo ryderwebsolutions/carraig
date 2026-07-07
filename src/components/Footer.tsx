@@ -8,15 +8,30 @@ export default function Footer() {
   return (
     <footer className="bg-charcoal-soft py-14 text-white/80">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="flex flex-col gap-6 border-b border-white/10 pb-10 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="font-heading text-xl font-semibold text-white">Ready to get started?</p>
+            <p className="mt-1 text-sm text-white/65">
+              Get a free, no-obligation quote for your driveway, patio, or pathway.
+            </p>
+          </div>
+          <Link
+            href="/#contact"
+            className="flex min-h-[48px] shrink-0 items-center justify-center rounded-full bg-terracotta px-6 text-sm font-semibold text-white transition-colors hover:bg-terracotta-dark"
+          >
+            Get a Free Quote
+          </Link>
+        </div>
+
+        <div className="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="font-heading text-lg font-semibold text-white">{business.name}</p>
             <p className="mt-2 text-sm">{business.tagline}</p>
-            <p className="mt-4 text-xs text-white/50">Owned &amp; operated by {business.owner}</p>
+            <p className="mt-4 text-xs text-white/65">Owned &amp; operated by {business.owner}</p>
           </div>
 
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-white/50">Contact</p>
+            <p className="text-sm font-semibold uppercase tracking-wide text-white/65">Contact</p>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
                 <a href={telHref} className="hover:text-terracotta">
@@ -44,7 +59,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-white/50">Services</p>
+            <p className="text-sm font-semibold uppercase tracking-wide text-white/65">Services</p>
             <ul className="mt-3 space-y-2 text-sm">
               {services.slice(0, 3).map((s) => (
                 <li key={s.id}>
@@ -57,7 +72,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-white/50">Sitemap</p>
+            <p className="text-sm font-semibold uppercase tracking-wide text-white/65">Sitemap</p>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
                 <Link href="/" className="hover:text-terracotta">
@@ -75,11 +90,11 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-            <p className="mt-4 text-sm text-white/50">{contact.areaServed}</p>
+            <p className="mt-4 text-sm text-white/65">{contact.areaServed}</p>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-6 text-xs text-white/40">
+        <div className="mt-10 border-t border-white/10 pt-6 text-xs text-white/60">
           &copy; {year} {business.name}. All rights reserved.
         </div>
       </div>

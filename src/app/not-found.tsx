@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <>
       <Header />
-      <main className="flex flex-1 flex-col items-center justify-center px-4 py-24 text-center">
+      <main id="main-content" className="flex flex-1 flex-col items-center justify-center px-4 py-24 text-center">
         <p className="font-heading text-6xl font-semibold text-terracotta">404</p>
         <h1 className="mt-4 font-heading text-2xl font-semibold text-charcoal sm:text-3xl">
           That page doesn&apos;t exist

@@ -57,39 +57,106 @@ export interface Project {
   id: string;
   title: string;
   surfaceType: ServiceId;
-  // Paths are placeholders until real project photos are added.
-  beforeImage: string | null;
-  afterImage: string | null;
+  // Cover photo shown on the gallery card.
+  afterImage: string;
+  // Every photo for this job, including the cover — shown as a set in the lightbox.
+  images: string[];
   description: string;
+  // Optional short installation/finished clip shown alongside the photos.
+  video?: string;
 }
 
-// No completed-project photos loaded yet. Replace beforeImage/afterImage
-// with real photo paths (e.g. "/images/projects/driveway-1-after.jpg") as
-// they come in — the gallery needs no other changes.
 export const projects: Project[] = [
   {
-    id: "project-1",
+    id: "compass-medallion",
+    title: "Custom Compass Medallion Inlay",
+    surfaceType: "driveways",
+    afterImage: "/images/projects/driveway-compass-medallion.jpg",
+    images: ["/images/projects/driveway-compass-medallion.jpg"],
+    description: "A hand-detailed compass medallion, inlaid directly into the resin surface.",
+    video: "/videos/install-compass-medallion-detailing.mp4",
+  },
+  {
+    id: "buff-balustrade-driveway",
     title: "Resin Bound Driveway",
     surfaceType: "driveways",
-    beforeImage: null,
-    afterImage: null,
-    description: "",
+    afterImage: "/images/projects/driveway-buff-balustrade-entrance.jpg",
+    images: ["/images/projects/driveway-buff-balustrade-entrance.jpg"],
+    description: "A buff-finish driveway laid to a clean, seamless edge.",
   },
   {
-    id: "project-2",
-    title: "Resin Bound Patio",
-    surfaceType: "patios",
-    beforeImage: null,
-    afterImage: null,
-    description: "",
+    id: "gated-entrance-driveway",
+    title: "Resin Bound Driveway at Gated Entrance",
+    surfaceType: "driveways",
+    afterImage: "/images/projects/driveway-gated-entrance.jpg",
+    images: ["/images/projects/driveway-gated-entrance.jpg"],
+    description: "A wide entrance driveway finished in a durable grey aggregate blend.",
+    video: "/videos/install-gated-driveway-laying.mp4",
   },
   {
-    id: "project-3",
-    title: "Pathway & Garden Surfacing",
+    id: "pedestrian-island",
+    title: "Resin Bound Pedestrian Island",
     surfaceType: "pathways",
-    beforeImage: null,
-    afterImage: null,
-    description: "",
+    afterImage: "/images/projects/pathway-pedestrian-island-1.jpg",
+    images: [
+      "/images/projects/pathway-pedestrian-island-1.jpg",
+      "/images/projects/pathway-pedestrian-island-2.jpg",
+      "/images/projects/pathway-pedestrian-island-3.jpg",
+    ],
+    description: "A raised pedestrian refuge finished in permeable resin bound surfacing.",
+    video: "/videos/finished-pedestrian-island-pan.mp4",
+  },
+  {
+    id: "curved-granite-pathway",
+    title: "Curved Garden Pathway with Granite Border",
+    surfaceType: "pathways",
+    afterImage: "/images/projects/pathway-curved-granite-border.jpg",
+    images: ["/images/projects/pathway-curved-granite-border.jpg"],
+    description: "A sweeping pathway finished with a natural granite setts border.",
+  },
+  {
+    id: "cobblestone-pathway",
+    title: "Garden Pathway with Cobblestone Border",
+    surfaceType: "pathways",
+    afterImage: "/images/projects/pathway-cobblestone-border.jpg",
+    images: ["/images/projects/pathway-cobblestone-border.jpg"],
+    description: "A resin bound path bordered in reclaimed cobblestone, leading to the garden gate.",
+  },
+  {
+    id: "buff-patio",
+    title: "Resin Bound Patio, Buff Finish",
+    surfaceType: "patios",
+    afterImage: "/images/projects/patio-buff-bifold-doors-1.jpg",
+    images: [
+      "/images/projects/patio-buff-bifold-doors-1.jpg",
+      "/images/projects/patio-buff-bifold-doors-2.jpg",
+    ],
+    description: "A buff-finish patio laid flush to the bifold doors for a seamless indoor-outdoor flow.",
+    video: "/videos/install-power-trowel-finishing.mp4",
+  },
+  {
+    id: "terracotta-patio",
+    title: "Resin Bound Patio, Terracotta Finish",
+    surfaceType: "patios",
+    afterImage: "/images/projects/patio-terracotta-corner-1.jpg",
+    images: [
+      "/images/projects/patio-terracotta-corner-1.jpg",
+      "/images/projects/patio-terracotta-corner-2.jpg",
+    ],
+    description: "A warm terracotta-toned patio finish.",
+  },
+  {
+    id: "terracotta-curved-patio",
+    title: "Resin Bound Patio, Curved Design",
+    surfaceType: "patios",
+    afterImage: "/images/projects/patio-terracotta-curved-1.jpg",
+    images: [
+      "/images/projects/patio-terracotta-curved-1.jpg",
+      "/images/projects/patio-terracotta-curved-2.jpg",
+      "/images/projects/patio-terracotta-curved-3.jpg",
+    ],
+    description: "A curved terracotta patio with a granite border, laid to the sliding doors.",
+    video: "/videos/finished-terracotta-patio-pan.mp4",
   },
 ];
 

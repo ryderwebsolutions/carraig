@@ -25,6 +25,37 @@ export default function Process() {
             </FadeUp>
           ))}
         </div>
+
+        <FadeUp delayMs={320}>
+          <div className="mt-16 grid gap-6 sm:grid-cols-2">
+            <div className="overflow-hidden rounded-2xl bg-white/5">
+              <video
+                src="/videos/mixing-resin-quartz.mp4"
+                controls
+                playsInline
+                preload="none"
+                poster="/images/video-posters/mixing-resin-quartz.jpg"
+                className="aspect-video w-full bg-black"
+              >
+                Your browser does not support embedded video.
+              </video>
+              <p className="p-4 text-sm text-white/70">Mixing the resin and quartz aggregate on site.</p>
+            </div>
+            <div className="overflow-hidden rounded-2xl bg-white/5">
+              <video
+                src="/videos/finished-driveway-texture-closeup.mp4"
+                controls
+                playsInline
+                preload="none"
+                poster="/images/video-posters/finished-driveway-texture-closeup.jpg"
+                className="aspect-video w-full bg-black"
+              >
+                Your browser does not support embedded video.
+              </video>
+              <p className="p-4 text-sm text-white/70">A close look at the finished, seamless texture.</p>
+            </div>
+          </div>
+        </FadeUp>
       </div>
     </section>
   );

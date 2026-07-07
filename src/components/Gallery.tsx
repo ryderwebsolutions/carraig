@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { projects, services, business, type ServiceId } from "@/lib/content";
 import FadeUp from "./FadeUp";
 
@@ -9,9 +10,36 @@ type Filter = "all" | ServiceId;
 export default function Gallery({ showHeading = true }: { showHeading?: boolean }) {
   const [filter, setFilter] = useState<Filter>("all");
   const [lightboxId, setLightboxId] = useState<string | null>(null);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
 
   const filtered = filter === "all" ? projects : projects.filter((p) => p.surfaceType === filter);
   const activeProject = projects.find((p) => p.id === lightboxId) ?? null;
+
+  function openLightbox(id: string, trigger: HTMLButtonElement) {
+    lastTriggerRef.current = trigger;
+    setActiveImageIndex(0);
+    setLightboxId(id);
+  }
+
+  function closeLightbox() {
+    setLightboxId(null);
+    lastTriggerRef.current?.focus();
+  }
+
+  useEffect(() => {
+    if (!activeProject) return;
+    closeButtonRef.current?.focus();
+
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") closeLightbox();
+    }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [activeProject]);
+
+  const activeImage = activeProject?.images[activeImageIndex] ?? activeProject?.afterImage;
 
   return (
     <section id="our-work" className="bg-stone-100 py-20 sm:py-28">
@@ -29,7 +57,7 @@ export default function Gallery({ showHeading = true }: { showHeading?: boolean 
         )}
 
         {projects.length > 0 && (
-          <div className="mt-8 flex gap-2 overflow-x-auto no-scrollbar">
+          <div className="mt-8 flex gap-2 overflow-x-auto no-scrollbar" role="group" aria-label="Filter projects by type">
             <FilterChip active={filter === "all"} onClick={() => setFilter("all")}>
               All
             </FilterChip>
@@ -46,34 +74,22 @@ export default function Gallery({ showHeading = true }: { showHeading?: boolean 
             <FadeUp key={project.id} delayMs={i * 60}>
               <button
                 type="button"
-                onClick={() => setLightboxId(project.id)}
-                className="group block w-full overflow-hidden rounded-2xl border border-charcoal/10 bg-white text-left"
+                onClick={(e) => openLightbox(project.id, e.currentTarget)}
+                aria-haspopup="dialog"
+                className="group block w-full overflow-hidden rounded-2xl border border-charcoal/10 bg-white text-left shadow-sm transition-shadow hover:shadow-md"
               >
                 <div className="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-stone-100 to-charcoal/10">
-                  {project.afterImage ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={project.afterImage}
-                      alt={project.description}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  ) : (
-                    <div className="flex h-full w-full flex-col items-center justify-center gap-2 p-4 text-center">
-                      <svg
-                        viewBox="0 0 24 24"
-                        className="h-8 w-8 text-charcoal/25"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth={1.5}
-                        aria-hidden="true"
-                      >
-                        <path d="M4 16l4.5-4.5a2 2 0 012.8 0L16 16M14 14l1.5-1.5a2 2 0 012.8 0L20 14M4 6h16v12H4z" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                      <span className="text-xs font-medium uppercase tracking-wide text-charcoal/40">
-                        Project photo coming soon
-                      </span>
-                    </div>
+                  <Image
+                    src={project.afterImage}
+                    alt={`${project.title} — ${project.description}`}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  {project.images.length > 1 && (
+                    <span className="absolute bottom-2 right-2 flex items-center gap-1 rounded-full bg-charcoal/70 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm">
+                      <PhotosIcon /> {project.images.length}
+                    </span>
                   )}
                 </div>
                 <div className="p-4">
@@ -99,46 +115,76 @@ export default function Gallery({ showHeading = true }: { showHeading?: boolean 
         </div>
       </div>
 
-      {activeProject && (
+      {activeProject && activeImage && (
         <div
           role="dialog"
           aria-modal="true"
           aria-label={activeProject.title}
           className="fixed inset-0 z-[60] flex items-center justify-center bg-charcoal/90 p-4"
-          onClick={() => setLightboxId(null)}
+          onClick={closeLightbox}
         >
           <button
             type="button"
+            ref={closeButtonRef}
             aria-label="Close"
-            onClick={() => setLightboxId(null)}
-            className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
+            onClick={closeLightbox}
+            className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
           >
             <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2}>
               <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
             </svg>
           </button>
           <div
-            className="max-h-[85vh] w-full max-w-3xl overflow-hidden rounded-2xl bg-white"
+            className="max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl bg-white"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative aspect-[4/3] w-full bg-stone-100">
-              {activeProject.afterImage ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={activeProject.afterImage}
-                  alt={activeProject.description}
-                  className="h-full w-full object-cover"
-                />
-              ) : (
-                <div className="flex h-full w-full items-center justify-center text-charcoal/40">
-                  Project photo coming soon
-                </div>
-              )}
+              <Image
+                src={activeImage}
+                alt={`${activeProject.title} — ${activeProject.description}`}
+                fill
+                sizes="(min-width: 640px) 768px, 100vw"
+                className="object-cover"
+                priority
+              />
             </div>
-            <div className="p-5">
+
+            {activeProject.images.length > 1 && (
+              <div className="flex gap-2 overflow-x-auto p-3">
+                {activeProject.images.map((img, idx) => (
+                  <button
+                    key={img}
+                    type="button"
+                    onClick={() => setActiveImageIndex(idx)}
+                    aria-label={`Show photo ${idx + 1} of ${activeProject.images.length}`}
+                    aria-current={idx === activeImageIndex}
+                    className={`relative h-16 w-20 shrink-0 overflow-hidden rounded-lg border-2 ${
+                      idx === activeImageIndex ? "border-terracotta" : "border-transparent"
+                    }`}
+                  >
+                    <Image src={img} alt="" fill sizes="80px" className="object-cover" />
+                  </button>
+                ))}
+              </div>
+            )}
+
+            <div className="p-5 pt-2">
               <h3 className="font-heading text-lg font-semibold text-charcoal">{activeProject.title}</h3>
               {activeProject.description && (
                 <p className="mt-1 text-sm text-charcoal/60">{activeProject.description}</p>
+              )}
+              {activeProject.video && (
+                <video
+                  key={activeProject.video}
+                  src={activeProject.video}
+                  controls
+                  playsInline
+                  preload="none"
+                  poster={activeProject.afterImage}
+                  className="mt-4 max-h-[50vh] w-full rounded-xl bg-black"
+                >
+                  Your browser does not support embedded video.
+                </video>
               )}
             </div>
           </div>
@@ -161,6 +207,7 @@ function FilterChip({
     <button
       type="button"
       onClick={onClick}
+      aria-pressed={active}
       className={`min-h-[40px] shrink-0 rounded-full border px-4 text-sm font-medium transition-colors ${
         active
           ? "border-terracotta bg-terracotta text-white"
@@ -169,5 +216,14 @@ function FilterChip({
     >
       {children}
     </button>
+  );
+}
+
+function PhotosIcon() {
+  return (
+    <svg viewBox="0 0 20 20" className="h-3.5 w-3.5" fill="currentColor" aria-hidden="true">
+      <path d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h9a2 2 0 002-2V6a2 2 0 00-2-2H4zm0 2h9v8H4V6z" />
+      <path d="M15 3a2 2 0 012 2v8a1 1 0 11-2 0V5H7a1 1 0 110-2h8z" />
+    </svg>
   );
 }
