@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { business, contact } from "@/lib/content";
 import { telHref, whatsappHref } from "@/lib/links";
@@ -21,8 +22,15 @@ export default function Header() {
     <>
       <header className="sticky top-0 z-50 bg-stone-50/95 backdrop-blur border-b border-charcoal/10">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-          <Link href="/" className="font-heading text-lg font-semibold text-charcoal sm:text-xl">
-            {business.shortName}
+          <Link href="/" className="shrink-0">
+            <Image
+              src="/images/logo/logo-full.png"
+              alt={business.name}
+              width={1448}
+              height={640}
+              priority
+              className="h-10 w-auto sm:h-12"
+            />
           </Link>
 
           <nav className="hidden lg:flex lg:items-center lg:gap-6">

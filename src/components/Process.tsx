@@ -27,7 +27,7 @@ export default function Process() {
         </div>
 
         <FadeUp delayMs={320}>
-          <div className="mt-16 grid gap-6 sm:grid-cols-2">
+          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <div className="overflow-hidden rounded-2xl bg-white/5">
               <video
                 src="/videos/mixing-resin-quartz.mp4"
@@ -40,6 +40,19 @@ export default function Process() {
                 Your browser does not support embedded video.
               </video>
               <p className="p-4 text-sm text-white/70">Mixing the resin and quartz aggregate on site.</p>
+            </div>
+            <div className="overflow-hidden rounded-2xl bg-white/5">
+              <video
+                src="/videos/install-gated-driveway-laying.mp4"
+                controls
+                playsInline
+                preload="none"
+                poster="/images/video-posters/install-gated-driveway-laying.jpg"
+                className="aspect-video w-full bg-black"
+              >
+                Your browser does not support embedded video.
+              </video>
+              <p className="p-4 text-sm text-white/70">Laying and finishing a resin bound surface on site.</p>
             </div>
             <div className="overflow-hidden rounded-2xl bg-white/5">
               <video
