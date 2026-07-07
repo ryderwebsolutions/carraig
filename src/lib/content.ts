@@ -221,6 +221,11 @@ export const faqs: Faq[] = [
     answer:
       "In many cases resin bound surfacing can be laid over a suitable existing surface — get in touch and we can advise after a site visit.",
   },
+  {
+    question: "How do I look after a resin bound surface?",
+    answer:
+      "Very little upkeep is needed — a periodic sweep and an occasional power wash is normally enough to keep it looking like new.",
+  },
 ];
 
 export const whyUsPoints = [
@@ -230,7 +235,8 @@ export const whyUsPoints = [
   },
   {
     title: "Low maintenance",
-    description: "Resists weeds and moss far better than gravel, tarmac, or block paving.",
+    description:
+      "Resists weeds, moss, and frost far better than gravel, tarmac, or block paving, and won't fade in UV light.",
   },
   {
     title: "Natural stone blends",
