@@ -37,19 +37,19 @@ export default function Header() {
             </span>
           </Link>
 
-          <nav className="hidden lg:flex lg:items-center lg:gap-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-charcoal/80 transition-colors hover:text-terracotta"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
+          <div className="flex items-center gap-1 sm:gap-2 lg:gap-6">
+            <nav className="hidden lg:flex lg:items-center lg:gap-6">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-medium text-charcoal/80 transition-colors hover:text-terracotta"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
 
-          <div className="hidden items-center gap-4 lg:flex">
             <a
               href={business.instagramUrl}
               target="_blank"
@@ -68,37 +68,40 @@ export default function Header() {
             >
               <WhatsAppIcon className="h-5 w-5" />
             </a>
-            <a
-              href={telHref}
-              className="text-sm font-medium text-charcoal/80 transition-colors hover:text-terracotta"
-            >
-              {contact.phone}
-            </a>
-            <Link
-              href="/#contact"
-              className="rounded-full bg-terracotta px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-terracotta-dark"
-            >
-              Get a Quote
-            </Link>
-          </div>
 
-          <button
-            type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
-            className="flex h-11 w-11 items-center justify-center rounded-full text-charcoal lg:hidden"
-          >
-            {open ? (
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2}>
-                <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-              </svg>
-            ) : (
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2}>
-                <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
-              </svg>
-            )}
-          </button>
+            <div className="hidden items-center gap-4 lg:flex">
+              <a
+                href={telHref}
+                className="text-sm font-medium text-charcoal/80 transition-colors hover:text-terracotta"
+              >
+                {contact.phone}
+              </a>
+              <Link
+                href="/#contact"
+                className="rounded-full bg-terracotta px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-terracotta-dark"
+              >
+                Get a Quote
+              </Link>
+            </div>
+
+            <button
+              type="button"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              onClick={() => setOpen((v) => !v)}
+              className="flex h-11 w-11 items-center justify-center rounded-full text-charcoal lg:hidden"
+            >
+              {open ? (
+                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2}>
+                  <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2}>
+                  <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
       </header>
 
