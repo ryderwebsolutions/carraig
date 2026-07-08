@@ -7,8 +7,8 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-[92vh] items-end overflow-hidden bg-charcoal text-white lg:min-h-[85vh] lg:items-center">
       <Image
-        src="/images/projects/driveway-buff-balustrade-entrance.jpg"
-        alt="Completed resin bound driveway in a buff finish, laid to a clean edge outside a home entrance"
+        src="/images/projects/driveway-compass-medallion.jpg"
+        alt="A custom compass medallion hand-detailed into a resin bound driveway surface"
         fill
         priority
         sizes="100vw"

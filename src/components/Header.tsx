@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { business, contact } from "@/lib/content";
 import { telHref, whatsappHref } from "@/lib/links";
+import { InstagramIcon, WhatsAppIcon } from "./icons";
 
 const navLinks = [
   { href: "/#services", label: "Services" },
@@ -22,15 +23,18 @@ export default function Header() {
     <>
       <header className="sticky top-0 z-50 bg-stone-50/95 backdrop-blur border-b border-charcoal/10">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-          <Link href="/" className="shrink-0">
+          <Link href="/" className="flex shrink-0 items-center gap-2.5">
             <Image
-              src="/images/logo/logo-full.png"
-              alt={business.name}
-              width={1498}
-              height={640}
+              src="/images/logo/logo-circle.png"
+              alt=""
+              width={320}
+              height={320}
               priority
-              className="h-10 w-auto sm:h-12"
+              className="h-9 w-9 sm:h-10 sm:w-10"
             />
+            <span className="font-heading text-lg font-semibold text-charcoal sm:text-xl">
+              {business.shortName}
+            </span>
           </Link>
 
           <nav className="hidden lg:flex lg:items-center lg:gap-6">
@@ -46,6 +50,24 @@ export default function Header() {
           </nav>
 
           <div className="hidden items-center gap-4 lg:flex">
+            <a
+              href={business.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${business.name} on Instagram`}
+              className="flex h-9 w-9 items-center justify-center rounded-full text-charcoal/70 transition-colors hover:bg-charcoal/5 hover:text-terracotta"
+            >
+              <InstagramIcon className="h-5 w-5" />
+            </a>
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Message ${business.name} on WhatsApp`}
+              className="flex h-9 w-9 items-center justify-center rounded-full text-charcoal/70 transition-colors hover:bg-charcoal/5 hover:text-terracotta"
+            >
+              <WhatsAppIcon className="h-5 w-5" />
+            </a>
             <a
               href={telHref}
               className="text-sm font-medium text-charcoal/80 transition-colors hover:text-terracotta"

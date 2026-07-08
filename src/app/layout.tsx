@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 const siteUrl = `https://${business.domain}`;
-const shareImage = "/images/projects/driveway-buff-balustrade-entrance.jpg";
+const shareImage = "/images/projects/driveway-compass-medallion.jpg";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
