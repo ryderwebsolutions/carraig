@@ -5,7 +5,7 @@ export const business = {
   shortName: "Carraig Álainn",
   tagline: "Beautiful rock, beautifully laid.",
   owner: "Derek Deane",
-  domain: "carraigalainnresinsurfaces.ie",
+  domain: "www.carraigalainnresinsurfaces.ie",
   instagramHandle: "@derekdeane.resinbound",
   instagramUrl: "https://www.instagram.com/derekdeane.resinbound",
 };
