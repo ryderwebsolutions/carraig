@@ -69,24 +69,36 @@ h1, h2, h3, h4 {
   outline-offset: 2px;
 }
 
-/* Crossfade for the rotating services/qualifications strip */
-@keyframes carousel-fade {
+/* Continuously scrolling services/qualifications ticker */
+@keyframes marquee-scroll {
   from {
-    opacity: 0;
-    transform: translateY(3px);
+    transform: translateX(0);
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    transform: translateX(-50%);
   }
 }
 
-.carousel-item {
-  animation: carousel-fade 0.4s ease-out;
+.marquee-track {
+  animation: marquee-scroll 26s linear infinite;
+}
+
+.marquee-track.paused {
+  animation-play-state: paused;
+}
+
+.marquee-mask:hover .marquee-track,
+.marquee-mask:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .carousel-item {
+  .marquee-track {
     animation: none;
   }
 }

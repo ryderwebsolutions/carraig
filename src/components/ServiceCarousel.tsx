@@ -1,74 +1,36 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { services, qualifications, type ServiceId } from "@/lib/content";
-import { ServiceIcon, BadgeCheckIcon } from "./icons";
+import { useState } from "react";
+import { services, qualifications } from "@/lib/content";
 
-type Item =
-  | { kind: "service"; id: ServiceId; label: string }
-  | { kind: "qualification"; label: string };
-
-const items: Item[] = [
-  ...services.map((s) => ({ kind: "service" as const, id: s.id, label: s.title })),
-  ...qualifications.map((q) => ({ kind: "qualification" as const, label: q })),
-];
+const items: string[] = [...services.map((s) => s.title), ...qualifications];
 
 export default function ServiceCarousel() {
-  const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
-  useEffect(() => {
-    if (paused) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    const id = setInterval(() => {
-      setIndex((i) => (i + 1) % items.length);
-    }, 3500);
-    return () => clearInterval(id);
-  }, [paused]);
-
-  const current = items[index];
-
   return (
-    <section
-      aria-label="Our services and standards"
-      className="border-b border-charcoal/10 bg-stone-100 py-4"
-    >
-      <div className="mx-auto grid max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-3 px-4 sm:px-6">
+    <section aria-label="Our services and standards" className="bg-charcoal py-4">
+      <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 sm:px-6">
         <button
           type="button"
           onClick={() => setPaused((p) => !p)}
-          aria-label={paused ? "Resume rotating list" : "Pause rotating list"}
-          className="flex h-8 w-8 items-center justify-center rounded-full text-charcoal/50 transition-colors hover:bg-charcoal/5 hover:text-terracotta"
+          aria-label={paused ? "Resume scrolling list" : "Pause scrolling list"}
+          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-white/40 transition-colors hover:bg-white/10 hover:text-terracotta"
         >
-          {paused ? <PlayIcon className="h-4 w-4" /> : <PauseIcon className="h-4 w-4" />}
+          {paused ? <PlayIcon className="h-3.5 w-3.5" /> : <PauseIcon className="h-3.5 w-3.5" />}
         </button>
 
-        <div
-          key={index}
-          className="carousel-item flex min-h-[24px] items-center justify-center gap-2 text-center text-sm font-medium text-charcoal sm:text-base"
-        >
-          {current.kind === "service" ? (
-            <ServiceIcon id={current.id} className="h-5 w-5 shrink-0 text-terracotta" />
-          ) : (
-            <BadgeCheckIcon className="h-5 w-5 shrink-0 text-terracotta" />
-          )}
-          <span>{current.label}</span>
-        </div>
-
-        <div className="flex gap-1.5">
-          {items.map((item, i) => (
-            <button
-              key={item.label}
-              type="button"
-              onClick={() => setIndex(i)}
-              aria-label={`Show ${item.label}`}
-              aria-current={i === index}
-              className={`h-1.5 rounded-full transition-all ${
-                i === index ? "w-5 bg-terracotta" : "w-1.5 bg-charcoal/20"
-              }`}
-            />
-          ))}
+        <div className="marquee-mask relative flex-1 overflow-hidden">
+          <div className={`marquee-track flex w-max items-center ${paused ? "paused" : ""}`}>
+            {[...items, ...items].map((label, i) => (
+              <span key={i} className="flex shrink-0 items-center whitespace-nowrap">
+                <span className="px-6 text-sm font-bold uppercase tracking-wide text-white sm:text-base">
+                  {label}
+                </span>
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-terracotta" aria-hidden="true" />
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
