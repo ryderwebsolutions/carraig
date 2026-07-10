@@ -31,7 +31,7 @@ export default function Hero() {
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link
-            href="/#contact"
+            href="/contact"
             className="flex min-h-[52px] items-center justify-center rounded-full bg-terracotta px-8 text-base font-semibold text-white transition-transform hover:bg-terracotta-dark active:scale-[0.98]"
           >
             Get a Free Quote

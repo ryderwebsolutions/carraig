@@ -2,7 +2,8 @@ import Image from "next/image";
 import { whyUsPoints } from "@/lib/content";
 import FadeUp from "./FadeUp";
 
-export default function WhyUs() {
+export default function WhyUs({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
+  const Heading = headingLevel;
   return (
     <section id="why-us" className="bg-stone-50 py-20 sm:py-28">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16">
@@ -21,9 +22,9 @@ export default function WhyUs() {
 
         <FadeUp delayMs={100}>
           <p className="text-sm font-semibold uppercase tracking-wide text-terracotta">Why Us</p>
-          <h2 className="mt-2 font-heading text-3xl font-semibold text-charcoal sm:text-4xl">
+          <Heading className="mt-2 font-heading text-3xl font-semibold text-charcoal sm:text-4xl">
             Why Choose Carraig Álainn Resin Surfaces
-          </h2>
+          </Heading>
 
           <dl className="mt-8 space-y-6">
             {whyUsPoints.map((point) => (

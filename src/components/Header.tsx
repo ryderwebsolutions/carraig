@@ -8,13 +8,13 @@ import { telHref, whatsappHref } from "@/lib/links";
 import { InstagramIcon, WhatsAppIcon } from "./icons";
 
 const navLinks = [
-  { href: "/#services", label: "Services" },
-  { href: "/#our-work", label: "Our Work" },
-  { href: "/#why-us", label: "Why Us" },
-  { href: "/#process", label: "Process" },
-  { href: "/#areas", label: "Areas We Cover" },
-  { href: "/#faqs", label: "FAQs" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/services", label: "Services" },
+  { href: "/gallery", label: "Our Work" },
+  { href: "/why-us", label: "Why Us" },
+  { href: "/process", label: "Process" },
+  { href: "/areas", label: "Areas We Cover" },
+  { href: "/faqs", label: "FAQs" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -41,13 +41,13 @@ export default function Header() {
           <div className="flex items-center gap-1 sm:gap-2 xl:gap-4">
             <nav className="hidden xl:flex xl:items-center xl:gap-5">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   className="whitespace-nowrap text-sm font-medium text-charcoal/80 transition-colors hover:text-terracotta"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
 
@@ -78,7 +78,7 @@ export default function Header() {
                 {contact.phone}
               </a>
               <Link
-                href="/#contact"
+                href="/contact"
                 className="whitespace-nowrap rounded-full bg-terracotta px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-terracotta-dark"
               >
                 Get a Quote
@@ -110,14 +110,14 @@ export default function Header() {
         <div className="fixed inset-0 top-[57px] z-50 flex flex-col bg-stone-50 xl:hidden">
           <nav className="flex flex-1 flex-col items-stretch gap-1 overflow-y-auto px-4 py-6">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="flex min-h-[44px] items-center rounded-lg px-3 text-lg font-medium text-charcoal transition-colors hover:bg-charcoal/5"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
           <div className="flex flex-col gap-3 border-t border-charcoal/10 p-4">
@@ -136,7 +136,7 @@ export default function Header() {
               WhatsApp Us
             </a>
             <Link
-              href="/#contact"
+              href="/contact"
               onClick={() => setOpen(false)}
               className="flex min-h-[44px] items-center justify-center rounded-full bg-terracotta px-5 text-base font-semibold text-white"
             >

@@ -16,7 +16,7 @@ export default function Footer() {
             </p>
           </div>
           <Link
-            href="/#contact"
+            href="/contact"
             className="flex min-h-[48px] shrink-0 items-center justify-center rounded-full bg-terracotta px-6 text-sm font-semibold text-white transition-colors hover:bg-terracotta-dark"
           >
             Get a Free Quote
@@ -63,7 +63,7 @@ export default function Footer() {
             <ul className="mt-3 space-y-2 text-sm">
               {services.slice(0, 3).map((s) => (
                 <li key={s.id}>
-                  <Link href="/#services" className="hover:text-terracotta">
+                  <Link href="/services" className="hover:text-terracotta">
                     {s.title}
                   </Link>
                 </li>
@@ -80,12 +80,32 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/services" className="hover:text-terracotta">
+                  Services
+                </Link>
+              </li>
+              <li>
                 <Link href="/gallery" className="hover:text-terracotta">
                   Our Work
                 </Link>
               </li>
               <li>
-                <Link href="/#faqs" className="hover:text-terracotta">
+                <Link href="/why-us" className="hover:text-terracotta">
+                  Why Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/process" className="hover:text-terracotta">
+                  Process
+                </Link>
+              </li>
+              <li>
+                <Link href="/areas" className="hover:text-terracotta">
+                  Areas We Cover
+                </Link>
+              </li>
+              <li>
+                <Link href="/faqs" className="hover:text-terracotta">
                   FAQs
                 </Link>
               </li>

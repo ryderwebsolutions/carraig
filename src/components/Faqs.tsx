@@ -1,8 +1,9 @@
 import { faqs } from "@/lib/content";
 import FadeUp from "./FadeUp";
 
-export default function Faqs() {
+export default function Faqs({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
   if (faqs.length === 0) return null;
+  const Heading = headingLevel;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -23,9 +24,9 @@ export default function Faqs() {
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <FadeUp>
           <p className="text-sm font-semibold uppercase tracking-wide text-terracotta">FAQs</p>
-          <h2 className="mt-2 font-heading text-3xl font-semibold text-charcoal sm:text-4xl">
+          <Heading className="mt-2 font-heading text-3xl font-semibold text-charcoal sm:text-4xl">
             Common Questions
-          </h2>
+          </Heading>
         </FadeUp>
 
         <FadeUp delayMs={80}>

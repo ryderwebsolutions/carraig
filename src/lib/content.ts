@@ -17,9 +17,7 @@ export const contact = {
   // Digits-only version for tel:/wa.me links, e.g. "353871234567".
   phoneDigits: "353868725193",
   whatsappDigits: "353868725193",
-  // Leave blank until a real address exists — the email button hides itself
-  // rather than showing a broken link.
-  email: "",
+  email: "ddn.deane@gmail.com",
   areaServed: "Carraig, Co. Tipperary",
   mapQuery: "Carraig, Co. Tipperary, Ireland",
 };

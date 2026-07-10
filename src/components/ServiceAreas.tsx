@@ -1,7 +1,8 @@
 import { contact } from "@/lib/content";
 import FadeUp from "./FadeUp";
 
-export default function ServiceAreas() {
+export default function ServiceAreas({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
+  const Heading = headingLevel;
   const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(contact.mapQuery)}&output=embed`;
 
   return (
@@ -12,9 +13,9 @@ export default function ServiceAreas() {
             <p className="text-sm font-semibold uppercase tracking-wide text-terracotta">
               Areas We Cover
             </p>
-            <h2 className="mt-2 font-heading text-3xl font-semibold text-charcoal sm:text-4xl">
+            <Heading className="mt-2 font-heading text-3xl font-semibold text-charcoal sm:text-4xl">
               Based in {contact.areaServed}
-            </h2>
+            </Heading>
             <p className="mt-3 text-charcoal/70">
               Not sure if you&apos;re in range? Get in touch and we&apos;ll let you know.
             </p>

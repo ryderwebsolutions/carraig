@@ -1,15 +1,16 @@
 import { services, type ServiceId } from "@/lib/content";
 import FadeUp from "./FadeUp";
 
-export default function Services() {
+export default function Services({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
+  const Heading = headingLevel;
   return (
     <section id="services" className="bg-stone-50 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <FadeUp>
           <p className="text-sm font-semibold uppercase tracking-wide text-terracotta">What We Do</p>
-          <h2 className="mt-2 max-w-xl font-heading text-3xl font-semibold text-charcoal sm:text-4xl">
+          <Heading className="mt-2 max-w-xl font-heading text-3xl font-semibold text-charcoal sm:text-4xl">
             Resin Bound Surfacing, Done Properly
-          </h2>
+          </Heading>
         </FadeUp>
 
         <FadeUp delayMs={80}>

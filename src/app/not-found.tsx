@@ -23,7 +23,7 @@ export default function NotFound() {
             Back to Home
           </Link>
           <Link
-            href="/#contact"
+            href="/contact"
             className="flex min-h-[48px] items-center justify-center rounded-full bg-terracotta px-6 text-base font-semibold text-white hover:bg-terracotta-dark"
           >
             Get a Free Quote
