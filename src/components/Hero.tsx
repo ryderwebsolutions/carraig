@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { contact } from "@/lib/content";
+import { contact, trustBadges } from "@/lib/content";
 import { telHref, whatsappHref } from "@/lib/links";
 
 export default function Hero() {
@@ -54,12 +54,11 @@ export default function Hero() {
         </a>
 
         <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/75">
-          <span className="flex items-center gap-1.5">
-            <CheckIcon /> Permeable &amp; SUDS-Friendly
-          </span>
-          <span className="flex items-center gap-1.5">
-            <CheckIcon /> Weed &amp; Moss Resistant
-          </span>
+          {trustBadges.map((badge) => (
+            <span key={badge} className="flex items-center gap-1.5">
+              <CheckIcon /> {badge}
+            </span>
+          ))}
         </div>
       </div>
     </section>

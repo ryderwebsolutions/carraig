@@ -85,6 +85,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/#faqs" className="hover:text-terracotta">
+                  FAQs
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="hover:text-terracotta">
                   Contact
                 </Link>

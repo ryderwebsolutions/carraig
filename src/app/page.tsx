@@ -6,6 +6,7 @@ import WhyUs from "@/components/WhyUs";
 import Process from "@/components/Process";
 import ServiceAreas from "@/components/ServiceAreas";
 import Testimonials from "@/components/Testimonials";
+import Faqs from "@/components/Faqs";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import MobileCtaBar from "@/components/MobileCtaBar";
@@ -22,6 +23,7 @@ export default function Home() {
         <Process />
         <ServiceAreas />
         <Testimonials />
+        <Faqs />
         <Contact />
       </main>
       <Footer />

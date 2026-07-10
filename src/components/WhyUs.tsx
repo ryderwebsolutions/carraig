@@ -8,11 +8,9 @@ export default function WhyUs() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16">
         <FadeUp>
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
-            {/* Stock placeholder — Unsplash, licensed for commercial use, photo by Joshua Hoehne
-                (https://unsplash.com/@joshua_hoehne). Swap for a real close-up aggregate photo. */}
             <Image
-              src="/images/stock/aggregate-texture.jpg"
-              alt="Close-up of natural stone aggregate, similar to resin bound surfacing material"
+              src="/images/aggregate-texture-real.jpg"
+              alt="Close-up of a finished resin bound surface, showing the smooth, seamless aggregate texture"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"

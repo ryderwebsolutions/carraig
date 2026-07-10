@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/#why-us", label: "Why Us" },
   { href: "/#process", label: "Process" },
   { href: "/#areas", label: "Areas We Cover" },
+  { href: "/#faqs", label: "FAQs" },
   { href: "/#contact", label: "Contact" },
 ];
 
@@ -22,7 +23,7 @@ export default function Header() {
   return (
     <>
       <header className="sticky top-0 z-50 bg-stone-50/95 backdrop-blur border-b border-charcoal/10">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
           <Link href="/" className="flex shrink-0 items-center gap-2.5">
             <Image
               src="/images/logo/logo-circle.png"
@@ -32,18 +33,18 @@ export default function Header() {
               priority
               className="h-9 w-9 sm:h-10 sm:w-10"
             />
-            <span className="font-heading text-lg font-semibold text-charcoal sm:text-xl">
+            <span className="whitespace-nowrap font-heading text-lg font-semibold text-charcoal sm:text-xl">
               {business.shortName}
             </span>
           </Link>
 
-          <div className="flex items-center gap-1 sm:gap-2 lg:gap-6">
-            <nav className="hidden lg:flex lg:items-center lg:gap-6">
+          <div className="flex items-center gap-1 sm:gap-2 xl:gap-4">
+            <nav className="hidden xl:flex xl:items-center xl:gap-5">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-charcoal/80 transition-colors hover:text-terracotta"
+                  className="whitespace-nowrap text-sm font-medium text-charcoal/80 transition-colors hover:text-terracotta"
                 >
                   {link.label}
                 </a>
@@ -69,16 +70,16 @@ export default function Header() {
               <WhatsAppIcon className="h-5 w-5" />
             </a>
 
-            <div className="hidden items-center gap-4 lg:flex">
+            <div className="hidden items-center gap-3 xl:flex">
               <a
                 href={telHref}
-                className="text-sm font-medium text-charcoal/80 transition-colors hover:text-terracotta"
+                className="whitespace-nowrap text-sm font-medium text-charcoal/80 transition-colors hover:text-terracotta"
               >
                 {contact.phone}
               </a>
               <Link
                 href="/#contact"
-                className="rounded-full bg-terracotta px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-terracotta-dark"
+                className="whitespace-nowrap rounded-full bg-terracotta px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-terracotta-dark"
               >
                 Get a Quote
               </Link>
@@ -89,7 +90,7 @@ export default function Header() {
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
-              className="flex h-11 w-11 items-center justify-center rounded-full text-charcoal lg:hidden"
+              className="flex h-11 w-11 items-center justify-center rounded-full text-charcoal xl:hidden"
             >
               {open ? (
                 <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2}>
@@ -106,7 +107,7 @@ export default function Header() {
       </header>
 
       {open && (
-        <div className="fixed inset-0 top-[57px] z-50 flex flex-col bg-stone-50 lg:hidden">
+        <div className="fixed inset-0 top-[57px] z-50 flex flex-col bg-stone-50 xl:hidden">
           <nav className="flex flex-1 flex-col items-stretch gap-1 overflow-y-auto px-4 py-6">
             {navLinks.map((link) => (
               <a
