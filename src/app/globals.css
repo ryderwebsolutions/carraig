@@ -69,6 +69,28 @@ h1, h2, h3, h4 {
   outline-offset: 2px;
 }
 
+/* Crossfade for the rotating services/qualifications strip */
+@keyframes carousel-fade {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.carousel-item {
+  animation: carousel-fade 0.4s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-item {
+    animation: none;
+  }
+}
+
 /* Utility for hiding scrollbars on horizontal filter chips */
 .no-scrollbar::-webkit-scrollbar {
   display: none;

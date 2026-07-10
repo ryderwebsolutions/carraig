@@ -32,3 +32,49 @@ export function InstagramIcon({ className = "h-5 w-5 shrink-0" }: { className?: 
     </svg>
   );
 }
+
+export function ServiceIcon({ id, className }: { id: "driveways" | "patios" | "pathways"; className?: string }) {
+  const common = {
+    viewBox: "0 0 24 24",
+    className,
+    fill: "none" as const,
+    stroke: "currentColor",
+    strokeWidth: 1.7,
+    "aria-hidden": true,
+  };
+
+  if (id === "driveways") {
+    return (
+      <svg {...common}>
+        <path d="M4 20l3-13a2 2 0 012-1.5h6A2 2 0 0117 6.5L20 20" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M6.5 14.5h11" strokeLinecap="round" />
+        <path d="M3 20h18" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (id === "patios") {
+    return (
+      <svg {...common}>
+        <rect x="4" y="4" width="16" height="16" rx="2" />
+        <path d="M4 12h16M12 4v16" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg {...common}>
+      <path d="M5 20c3-6 3-10 7-14M19 20c-3-6-3-10-7-14" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="12" cy="6" r="1.4" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+export function BadgeCheckIcon({ className = "h-5 w-5 shrink-0" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={1.7} aria-hidden="true">
+      <path d="M12 2.5l2.2 1.6 2.7-.3 1 2.5 2.5 1-.3 2.7 1.6 2.2-1.6 2.2.3 2.7-2.5 1-1 2.5-2.7-.3L12 21.5l-2.2-1.6-2.7.3-1-2.5-2.5-1 .3-2.7L2.3 12l1.6-2.2-.3-2.7 2.5-1 1-2.5 2.7.3z" strokeLinejoin="round" />
+      <path d="M8.5 12.3l2.3 2.3 4.7-4.7" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}

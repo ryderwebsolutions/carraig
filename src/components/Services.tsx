@@ -1,5 +1,6 @@
-import { services, type ServiceId } from "@/lib/content";
+import { services } from "@/lib/content";
 import FadeUp from "./FadeUp";
+import { ServiceIcon } from "./icons";
 
 export default function Services({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
   const Heading = headingLevel;
@@ -34,42 +35,5 @@ export default function Services({ headingLevel = "h2" }: { headingLevel?: "h1" 
         </FadeUp>
       </div>
     </section>
-  );
-}
-
-function ServiceIcon({ id, className }: { id: ServiceId; className?: string }) {
-  const common = {
-    viewBox: "0 0 24 24",
-    className,
-    fill: "none" as const,
-    stroke: "currentColor",
-    strokeWidth: 1.7,
-    "aria-hidden": true,
-  };
-
-  if (id === "driveways") {
-    return (
-      <svg {...common}>
-        <path d="M4 20l3-13a2 2 0 012-1.5h6A2 2 0 0117 6.5L20 20" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M6.5 14.5h11" strokeLinecap="round" />
-        <path d="M3 20h18" strokeLinecap="round" />
-      </svg>
-    );
-  }
-
-  if (id === "patios") {
-    return (
-      <svg {...common}>
-        <rect x="4" y="4" width="16" height="16" rx="2" />
-        <path d="M4 12h16M12 4v16" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg {...common}>
-      <path d="M5 20c3-6 3-10 7-14M19 20c-3-6-3-10-7-14" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="12" cy="6" r="1.4" fill="currentColor" stroke="none" />
-    </svg>
   );
 }

@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import ServiceCarousel from "@/components/ServiceCarousel";
 import Services from "@/components/Services";
 import Gallery from "@/components/Gallery";
 import WhyUs from "@/components/WhyUs";
@@ -17,6 +18,7 @@ export default function Home() {
       <Header />
       <main id="main-content" className="flex-1 pb-16 lg:pb-0">
         <Hero />
+        <ServiceCarousel />
         <Services />
         <Gallery />
         <WhyUs />

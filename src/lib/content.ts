@@ -242,3 +242,12 @@ export const trustBadges: string[] = [
   "Weed & Moss Resistant",
   // Do not add a service-area or "years trading" badge here until confirmed.
 ];
+
+// General resin bound surfacing standards/materials — not specific certifications
+// or trade body memberships. Do not add named accreditations, insurance status,
+// or years-trading claims here until confirmed with the client.
+export const qualifications: string[] = [
+  "SUDS-Compliant Permeable Systems",
+  "Premium UV-Stable Resin",
+  "Natural Stone Aggregates",
+];

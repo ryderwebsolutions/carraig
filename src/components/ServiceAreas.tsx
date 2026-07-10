@@ -3,7 +3,7 @@ import FadeUp from "./FadeUp";
 
 export default function ServiceAreas({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
   const Heading = headingLevel;
-  const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(contact.mapQuery)}&output=embed`;
+  const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(contact.mapQuery)}&z=11&output=embed`;
 
   return (
     <section id="areas" className="bg-stone-100 py-20 sm:py-28">

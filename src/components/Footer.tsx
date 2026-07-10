@@ -119,8 +119,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-6 text-xs text-white/60">
-          &copy; {year} {business.name}. All rights reserved.
+        <div className="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            &copy; {year} {business.name}. All rights reserved.
+          </p>
+          <Link href="/privacy" className="hover:text-terracotta">
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </footer>
