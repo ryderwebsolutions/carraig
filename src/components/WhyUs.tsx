@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { whyUsPoints } from "@/lib/content";
 import FadeUp from "./FadeUp";
 
@@ -6,27 +5,16 @@ export default function WhyUs({ headingLevel = "h2" }: { headingLevel?: "h1" | "
   const Heading = headingLevel;
   return (
     <section id="why-us" className="bg-stone-50 py-20 sm:py-28">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <FadeUp>
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
-            <Image
-              src="/images/aggregate-texture-real.jpg"
-              alt="Close-up of a finished resin bound surface, showing the smooth, seamless aggregate texture"
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-              loading="lazy"
-            />
-          </div>
-        </FadeUp>
-
-        <FadeUp delayMs={100}>
           <p className="text-sm font-semibold uppercase tracking-wide text-terracotta">Why Us</p>
-          <Heading className="mt-2 font-heading text-3xl font-semibold text-charcoal sm:text-4xl">
+          <Heading className="mt-2 max-w-xl font-heading text-3xl font-semibold text-charcoal sm:text-4xl">
             Why Choose Carraig Álainn Resin Surfaces
           </Heading>
+        </FadeUp>
 
-          <dl className="mt-8 space-y-6">
+        <FadeUp delayMs={80}>
+          <dl className="mt-10 grid gap-x-10 gap-y-8 sm:mt-12 sm:grid-cols-2">
             {whyUsPoints.map((point) => (
               <div key={point.title} className="flex gap-4">
                 <svg
