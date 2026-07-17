@@ -57,34 +57,38 @@ export default function Gallery({ showHeading = true }: { showHeading?: boolean 
         )}
 
         {projects.length > 0 && (
-          <div className="mt-8 flex gap-2 overflow-x-auto no-scrollbar" role="group" aria-label="Filter projects by type">
-            <FilterChip active={filter === "all"} onClick={() => setFilter("all")}>
+          <div
+            className="mt-8 flex gap-6 overflow-x-auto no-scrollbar"
+            role="group"
+            aria-label="Filter projects by type"
+          >
+            <FilterTab active={filter === "all"} onClick={() => setFilter("all")}>
               All
-            </FilterChip>
+            </FilterTab>
             {services.map((s) => (
-              <FilterChip key={s.id} active={filter === s.id} onClick={() => setFilter(s.id)}>
+              <FilterTab key={s.id} active={filter === s.id} onClick={() => setFilter(s.id)}>
                 {s.title}
-              </FilterChip>
+              </FilterTab>
             ))}
           </div>
         )}
 
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-x-5 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((project, i) => (
             <FadeUp key={project.id} delayMs={i * 60}>
               <button
                 type="button"
                 onClick={(e) => openLightbox(project.id, e.currentTarget)}
                 aria-haspopup="dialog"
-                className="group block w-full overflow-hidden rounded-2xl border border-charcoal/10 bg-white text-left shadow-sm transition-shadow hover:shadow-md"
+                className="group block w-full text-left"
               >
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-stone-100 to-charcoal/10">
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-stone-200">
                   <Image
                     src={project.afterImage}
                     alt={`${project.title} — ${project.description}`}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                   {project.images.length > 1 && (
                     <span className="absolute bottom-2 right-2 flex items-center gap-1 rounded-full bg-charcoal/70 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm">
@@ -92,7 +96,7 @@ export default function Gallery({ showHeading = true }: { showHeading?: boolean 
                     </span>
                   )}
                 </div>
-                <div className="p-4">
+                <div className="mt-3">
                   <h3 className="font-heading text-base font-semibold text-charcoal">{project.title}</h3>
                   {project.description && (
                     <p className="mt-1 text-sm text-charcoal/60">{project.description}</p>
@@ -194,7 +198,7 @@ export default function Gallery({ showHeading = true }: { showHeading?: boolean 
   );
 }
 
-function FilterChip({
+function FilterTab({
   active,
   onClick,
   children,
@@ -208,10 +212,10 @@ function FilterChip({
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className={`min-h-[40px] shrink-0 rounded-full border px-4 text-sm font-medium transition-colors ${
+      className={`shrink-0 whitespace-nowrap border-b-2 pb-3 text-sm font-medium transition-colors ${
         active
-          ? "border-terracotta bg-terracotta text-white"
-          : "border-charcoal/15 bg-white text-charcoal/70 hover:border-charcoal/30"
+          ? "border-terracotta text-charcoal"
+          : "border-transparent text-charcoal/50 hover:text-charcoal"
       }`}
     >
       {children}

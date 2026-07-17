@@ -14,8 +14,7 @@ export default function Hero() {
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/70 to-charcoal/40" />
-      <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-charcoal/30 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-charcoal/20" />
 
       <div className="relative mx-auto w-full max-w-6xl px-4 pb-14 pt-32 sm:px-6 lg:pb-24 lg:pt-24">
         <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-terracotta">
@@ -29,29 +28,28 @@ export default function Hero() {
           {contact.areaServed}.
         </p>
 
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-8">
           <Link
             href="/contact"
-            className="flex min-h-[52px] items-center justify-center rounded-full bg-terracotta px-8 text-base font-semibold text-white transition-transform hover:bg-terracotta-dark active:scale-[0.98]"
+            className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-terracotta px-8 text-base font-semibold text-white transition-transform hover:bg-terracotta-dark active:scale-[0.98]"
           >
             Get a Free Quote
           </Link>
+        </div>
+
+        <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm font-medium text-white/70">
+          <a href={telHref} className="underline underline-offset-4 hover:text-white">
+            Call {contact.phone}
+          </a>
           <a
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex min-h-[52px] items-center justify-center gap-2 rounded-full border border-white/40 px-8 text-base font-semibold text-white transition-colors hover:bg-white/10 active:scale-[0.98]"
+            className="underline underline-offset-4 hover:text-white"
           >
             WhatsApp Us
           </a>
         </div>
-
-        <a
-          href={telHref}
-          className="mt-4 inline-block text-sm font-medium text-white/70 underline underline-offset-4 hover:text-white"
-        >
-          Or call {contact.phone}
-        </a>
 
         <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/75">
           {trustBadges.map((badge) => (

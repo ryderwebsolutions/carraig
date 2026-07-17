@@ -69,40 +69,6 @@ h1, h2, h3, h4 {
   outline-offset: 2px;
 }
 
-/* Continuously scrolling services/qualifications ticker */
-@keyframes marquee-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.marquee-track {
-  animation: marquee-scroll 26s linear infinite;
-}
-
-.marquee-track.paused {
-  animation-play-state: paused;
-}
-
-.marquee-mask:hover .marquee-track,
-.marquee-mask:focus-within .marquee-track {
-  animation-play-state: paused;
-}
-
-.marquee-mask {
-  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none;
-  }
-}
-
 /* Utility for hiding scrollbars on horizontal filter chips */
 .no-scrollbar::-webkit-scrollbar {
   display: none;

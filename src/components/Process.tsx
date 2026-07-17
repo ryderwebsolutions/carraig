@@ -28,45 +28,45 @@ export default function Process({ headingLevel = "h2" }: { headingLevel?: "h1" |
         </div>
 
         <FadeUp delayMs={320}>
-          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="overflow-hidden rounded-2xl bg-white/5">
+          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div>
               <video
                 src="/videos/mixing-resin-quartz.mp4"
                 controls
                 playsInline
                 preload="none"
                 poster="/images/video-posters/mixing-resin-quartz.jpg"
-                className="aspect-video w-full bg-black"
+                className="aspect-video w-full rounded-xl bg-black"
               >
                 Your browser does not support embedded video.
               </video>
-              <p className="p-4 text-sm text-white/70">Mixing the resin and quartz aggregate on site.</p>
+              <p className="mt-3 text-sm text-white/70">Mixing the resin and quartz aggregate on site.</p>
             </div>
-            <div className="overflow-hidden rounded-2xl bg-white/5">
+            <div>
               <video
                 src="/videos/install-gated-driveway-laying.mp4"
                 controls
                 playsInline
                 preload="none"
                 poster="/images/video-posters/install-gated-driveway-laying.jpg"
-                className="aspect-video w-full bg-black"
+                className="aspect-video w-full rounded-xl bg-black"
               >
                 Your browser does not support embedded video.
               </video>
-              <p className="p-4 text-sm text-white/70">Laying and finishing a resin bound surface on site.</p>
+              <p className="mt-3 text-sm text-white/70">Laying and finishing a resin bound surface on site.</p>
             </div>
-            <div className="overflow-hidden rounded-2xl bg-white/5">
+            <div>
               <video
                 src="/videos/finished-driveway-texture-closeup.mp4"
                 controls
                 playsInline
                 preload="none"
                 poster="/images/video-posters/finished-driveway-texture-closeup.jpg"
-                className="aspect-video w-full bg-black"
+                className="aspect-video w-full rounded-xl bg-black"
               >
                 Your browser does not support embedded video.
               </video>
-              <p className="p-4 text-sm text-white/70">A close look at the finished, seamless texture.</p>
+              <p className="mt-3 text-sm text-white/70">A close look at the finished, seamless texture.</p>
             </div>
           </div>
         </FadeUp>

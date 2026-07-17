@@ -8,22 +8,7 @@ export default function Footer() {
   return (
     <footer className="bg-charcoal-soft py-14 text-white/80">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex flex-col gap-6 border-b border-white/10 pb-10 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="font-heading text-xl font-semibold text-white">Ready to get started?</p>
-            <p className="mt-1 text-sm text-white/65">
-              Get a free, no-obligation quote for your driveway, patio, or pathway.
-            </p>
-          </div>
-          <Link
-            href="/contact"
-            className="flex min-h-[48px] shrink-0 items-center justify-center rounded-full bg-terracotta px-6 text-sm font-semibold text-white transition-colors hover:bg-terracotta-dark"
-          >
-            Get a Free Quote
-          </Link>
-        </div>
-
-        <div className="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="font-heading text-lg font-semibold text-white">{business.name}</p>
             <p className="mt-2 text-sm">{business.tagline}</p>

@@ -237,17 +237,12 @@ export const whyUsPoints = [
   },
 ];
 
+// Shown as a static row under the Hero. Do not add a service-area or
+// "years trading" badge, named accreditations, insurance status, or other
+// unconfirmed claims here until confirmed with the client.
 export const trustBadges: string[] = [
   "Permeable & SUDS-Friendly",
   "Weed & Moss Resistant",
-  // Do not add a service-area or "years trading" badge here until confirmed.
-];
-
-// General resin bound surfacing standards/materials — not specific certifications
-// or trade body memberships. Do not add named accreditations, insurance status,
-// or years-trading claims here until confirmed with the client.
-export const qualifications: string[] = [
-  "SUDS-Compliant Permeable Systems",
   "Premium UV-Stable Resin",
   "Natural Stone Aggregates",
 ];

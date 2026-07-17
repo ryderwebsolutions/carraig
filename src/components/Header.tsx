@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { business, contact } from "@/lib/content";
 import { telHref, whatsappHref } from "@/lib/links";
-import { InstagramIcon, WhatsAppIcon } from "./icons";
 
 const navLinks = [
   { href: "/services", label: "Services" },
@@ -50,25 +49,6 @@ export default function Header() {
                 </Link>
               ))}
             </nav>
-
-            <a
-              href={business.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${business.name} on Instagram`}
-              className="flex h-9 w-9 items-center justify-center rounded-full text-charcoal/70 transition-colors hover:bg-charcoal/5 hover:text-terracotta"
-            >
-              <InstagramIcon className="h-5 w-5" />
-            </a>
-            <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Message ${business.name} on WhatsApp`}
-              className="flex h-9 w-9 items-center justify-center rounded-full text-charcoal/70 transition-colors hover:bg-charcoal/5 hover:text-terracotta"
-            >
-              <WhatsAppIcon className="h-5 w-5" />
-            </a>
 
             <div className="hidden items-center gap-3 xl:flex">
               <a
