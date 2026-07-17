@@ -4,11 +4,17 @@ import Services from "@/components/Services";
 import Footer from "@/components/Footer";
 import MobileCtaBar from "@/components/MobileCtaBar";
 
+const title = "Services";
+const description =
+  "Resin bound driveways, patios, and pathway surfacing from Carraig Álainn Resin Surfaces in Carraig, Co. Tipperary.";
+const image = "/images/projects/driveway-compass-medallion.jpg";
+
 export const metadata: Metadata = {
-  title: "Services",
-  description:
-    "Resin bound driveways, patios, and pathway surfacing from Carraig Álainn Resin Surfaces in Carraig, Co. Tipperary.",
+  title,
+  description,
   alternates: { canonical: "/services" },
+  openGraph: { title, description, url: "/services", images: [image], type: "website" },
+  twitter: { card: "summary_large_image", title, description, images: [image] },
 };
 
 export default function ServicesPage() {

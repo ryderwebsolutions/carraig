@@ -30,7 +30,6 @@ export default function Header() {
               alt=""
               width={320}
               height={320}
-              priority
               className="h-9 w-9 sm:h-10 sm:w-10"
             />
             <span className="whitespace-nowrap font-heading text-lg font-semibold text-charcoal sm:text-xl">

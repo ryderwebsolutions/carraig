@@ -4,11 +4,17 @@ import ServiceAreas from "@/components/ServiceAreas";
 import Footer from "@/components/Footer";
 import MobileCtaBar from "@/components/MobileCtaBar";
 
+const title = "Areas We Cover";
+const description =
+  "Carraig Álainn Resin Surfaces is based in Carraig, Co. Tipperary, and travels across the wider region for the right job — get in touch to check if your property is in range.";
+const image = "/images/projects/driveway-buff-balustrade-entrance.jpg";
+
 export const metadata: Metadata = {
-  title: "Areas We Cover",
-  description:
-    "Carraig Álainn Resin Surfaces is based in Carraig, Co. Tipperary — get in touch to check if your property is in range.",
+  title,
+  description,
   alternates: { canonical: "/areas" },
+  openGraph: { title, description, url: "/areas", images: [image], type: "website" },
+  twitter: { card: "summary_large_image", title, description, images: [image] },
 };
 
 export default function AreasPage() {

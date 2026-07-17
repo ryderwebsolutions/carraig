@@ -4,11 +4,17 @@ import Gallery from "@/components/Gallery";
 import Footer from "@/components/Footer";
 import MobileCtaBar from "@/components/MobileCtaBar";
 
+const title = "Our Work";
+const description =
+  "Recent resin bound driveway, patio, and pathway projects completed by Carraig Álainn Resin Surfaces in Carraig, Co. Tipperary.";
+const image = "/images/projects/pathway-terracotta-cobblestone-border.jpg";
+
 export const metadata: Metadata = {
-  title: "Our Work",
-  description:
-    "Recent resin bound driveway, patio, and pathway projects completed by Carraig Álainn Resin Surfaces in Carraig, Co. Tipperary.",
+  title,
+  description,
   alternates: { canonical: "/gallery" },
+  openGraph: { title, description, url: "/gallery", images: [image], type: "website" },
+  twitter: { card: "summary_large_image", title, description, images: [image] },
 };
 
 export default function GalleryPage() {

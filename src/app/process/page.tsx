@@ -4,11 +4,17 @@ import Process from "@/components/Process";
 import Footer from "@/components/Footer";
 import MobileCtaBar from "@/components/MobileCtaBar";
 
+const title = "Our Process";
+const description =
+  "From first enquiry to finished surface — how Carraig Álainn Resin Surfaces delivers a resin bound driveway, patio, or pathway.";
+const image = "/images/video-posters/mixing-resin-quartz.jpg";
+
 export const metadata: Metadata = {
-  title: "Our Process",
-  description:
-    "From first enquiry to finished surface — how Carraig Álainn Resin Surfaces delivers a resin bound driveway, patio, or pathway.",
+  title,
+  description,
   alternates: { canonical: "/process" },
+  openGraph: { title, description, url: "/process", images: [image], type: "website" },
+  twitter: { card: "summary_large_image", title, description, images: [image] },
 };
 
 export default function ProcessPage() {

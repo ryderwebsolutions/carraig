@@ -46,9 +46,9 @@ export default function Footer() {
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-white/65">Services</p>
             <ul className="mt-3 space-y-2 text-sm">
-              {services.slice(0, 3).map((s) => (
+              {services.map((s) => (
                 <li key={s.id}>
-                  <Link href="/services" className="hover:text-terracotta">
+                  <Link href={s.slug} className="hover:text-terracotta">
                     {s.title}
                   </Link>
                 </li>

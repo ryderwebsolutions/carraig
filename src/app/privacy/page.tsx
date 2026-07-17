@@ -5,10 +5,15 @@ import MobileCtaBar from "@/components/MobileCtaBar";
 import { business, contact } from "@/lib/content";
 import { mailHref, emailReady } from "@/lib/links";
 
+const title = "Privacy Policy";
+const description = `Privacy policy for ${business.name}, covering what happens to your information when you visit ${business.domain}.`;
+
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: `Privacy policy for ${business.name}, covering what happens to your information when you visit ${business.domain}.`,
+  title,
+  description,
   alternates: { canonical: "/privacy" },
+  openGraph: { title, description, url: "/privacy", type: "website" },
+  twitter: { card: "summary", title, description },
 };
 
 export default function PrivacyPage() {

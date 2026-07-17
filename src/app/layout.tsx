@@ -61,10 +61,12 @@ const jsonLd = {
     name: "Services",
     itemListElement: services.map((s) => ({
       "@type": "Offer",
+      url: `${siteUrl}${s.slug}`,
       itemOffered: {
         "@type": "Service",
         name: s.title,
         description: s.description,
+        url: `${siteUrl}${s.slug}`,
       },
     })),
   },

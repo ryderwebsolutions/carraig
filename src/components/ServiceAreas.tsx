@@ -1,4 +1,4 @@
-import { contact } from "@/lib/content";
+import { contact, serviceRegionNote } from "@/lib/content";
 import FadeUp from "./FadeUp";
 
 export default function ServiceAreas({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
@@ -17,6 +17,7 @@ export default function ServiceAreas({ headingLevel = "h2" }: { headingLevel?: "
               Based in {contact.areaServed}
             </Heading>
             <p className="mt-3 text-charcoal/70">
+              {serviceRegionNote}{" "}
               Not sure if you&apos;re in range? Get in touch and we&apos;ll let you know.
             </p>
           </div>
