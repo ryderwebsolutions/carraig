@@ -33,9 +33,7 @@ export default function Services({ headingLevel = "h2" }: { headingLevel?: "h1" 
             <ul className="mt-8 divide-y divide-charcoal/10 border-t border-charcoal/10">
               {services.map((service) => (
                 <li key={service.id} className="flex gap-5 py-6">
-                  <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-terracotta/10">
-                    <ServiceIcon id={service.id} className="h-5 w-5 text-terracotta" />
-                  </div>
+                  <ServiceIcon id={service.id} className="mt-1 h-6 w-6 shrink-0 text-terracotta" />
                   <div>
                     <h3 className="font-heading text-lg font-semibold text-charcoal sm:text-xl">
                       {service.title}
