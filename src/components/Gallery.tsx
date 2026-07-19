@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { projects, services, business, type ServiceId } from "@/lib/content";
 import FadeUp from "./FadeUp";
 
@@ -74,44 +73,29 @@ export default function Gallery({ showHeading = true }: { showHeading?: boolean 
           </div>
         )}
 
-        <div className="mt-10 grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-5 sm:gap-y-10 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-3 gap-1 sm:grid-cols-4 sm:gap-1.5 lg:grid-cols-6">
           {filtered.map((project, i) => (
-            <FadeUp key={project.id} delayMs={i * 60}>
-              <div className="w-full">
-                <button
-                  type="button"
-                  onClick={(e) => openLightbox(project.id, e.currentTarget)}
-                  aria-haspopup="dialog"
-                  className="group block w-full text-left"
-                >
-                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-stone-200">
-                    <Image
-                      src={project.afterImage}
-                      alt={`${project.title} — ${project.description}`}
-                      fill
-                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                    />
-                    {project.images.length > 1 && (
-                      <span className="absolute bottom-2 right-2 flex items-center gap-1 rounded-full bg-charcoal/70 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm">
-                        <PhotosIcon /> {project.images.length}
-                      </span>
-                    )}
-                  </div>
-                </button>
-                <div className="mt-3">
-                  <h3 className="font-heading text-base font-semibold text-charcoal">{project.title}</h3>
-                  {project.description && (
-                    <p className="mt-1 text-sm text-charcoal/60">{project.description}</p>
-                  )}
-                  <Link
-                    href={`/projects/${project.id}`}
-                    className="mt-1.5 inline-block text-sm font-medium text-terracotta hover:text-terracotta-dark"
-                  >
-                    View project →
-                  </Link>
-                </div>
-              </div>
+            <FadeUp key={project.id} delayMs={i * 30}>
+              <button
+                type="button"
+                onClick={(e) => openLightbox(project.id, e.currentTarget)}
+                aria-haspopup="dialog"
+                aria-label={project.title}
+                className="group relative block aspect-square w-full overflow-hidden bg-stone-200"
+              >
+                <Image
+                  src={project.afterImage}
+                  alt={`${project.title} — ${project.description}`}
+                  fill
+                  sizes="(min-width: 1024px) 16vw, (min-width: 640px) 25vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                {project.images.length > 1 && (
+                  <span className="absolute right-2 top-2 text-white drop-shadow">
+                    <PhotosIcon className="h-4 w-4" />
+                  </span>
+                )}
+              </button>
             </FadeUp>
           ))}
         </div>
@@ -232,9 +216,9 @@ function FilterTab({
   );
 }
 
-function PhotosIcon() {
+function PhotosIcon({ className = "h-3.5 w-3.5" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 20 20" className="h-3.5 w-3.5" fill="currentColor" aria-hidden="true">
+    <svg viewBox="0 0 20 20" className={className} fill="currentColor" aria-hidden="true">
       <path d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h9a2 2 0 002-2V6a2 2 0 00-2-2H4zm0 2h9v8H4V6z" />
       <path d="M15 3a2 2 0 012 2v8a1 1 0 11-2 0V5H7a1 1 0 110-2h8z" />
     </svg>

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { services } from "@/lib/content";
 import FadeUp from "./FadeUp";
-import { ServiceIcon } from "./icons";
 
 export default function Services({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
   const Heading = headingLevel;
@@ -19,16 +18,13 @@ export default function Services({ headingLevel = "h2" }: { headingLevel?: "h1" 
           <ul className="mt-10 divide-y divide-charcoal/10 border-t border-charcoal/10 sm:mt-12">
             {services.map((service) => (
               <li key={service.id} className="py-6">
-                <Link href={service.slug} className="group flex gap-5 sm:gap-8">
-                  <ServiceIcon id={service.id} className="mt-1 h-6 w-6 shrink-0 text-terracotta" />
-                  <div>
-                    <h3 className="font-heading text-lg font-semibold text-charcoal group-hover:text-terracotta sm:text-xl">
-                      {service.title}
-                    </h3>
-                    <p className="mt-1.5 max-w-2xl text-[15px] leading-relaxed text-charcoal/70 sm:text-base">
-                      {service.description}
-                    </p>
-                  </div>
+                <Link href={service.slug} className="group block">
+                  <h3 className="font-heading text-lg font-semibold text-charcoal group-hover:text-terracotta sm:text-xl">
+                    {service.title}
+                  </h3>
+                  <p className="mt-1.5 max-w-2xl text-[15px] leading-relaxed text-charcoal/70 sm:text-base">
+                    {service.description}
+                  </p>
                 </Link>
               </li>
             ))}
