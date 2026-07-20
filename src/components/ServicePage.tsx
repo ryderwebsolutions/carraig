@@ -90,7 +90,7 @@ export default function ServicePage({ serviceId }: { serviceId: ServiceId }) {
               {relatedProjects.map((project, i) => (
                 <FadeUp key={project.id} delayMs={i * 60}>
                   <Link href={`/projects/${project.id}`} className="group block w-full">
-                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-stone-200">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-stone-200">
                       <Image
                         src={project.afterImage}
                         alt={`${project.title} — ${project.description}`}
@@ -108,7 +108,7 @@ export default function ServicePage({ serviceId }: { serviceId: ServiceId }) {
             <div className="mt-10 text-center">
               <Link
                 href="/gallery"
-                className="inline-flex min-h-[44px] items-center justify-center rounded-md border border-charcoal/20 px-6 text-sm font-semibold text-charcoal transition-colors hover:bg-charcoal/5"
+                className="inline-flex min-h-[44px] items-center justify-center border border-charcoal/20 px-6 text-sm font-semibold text-charcoal transition-colors hover:bg-charcoal/5"
               >
                 See All Our Work
               </Link>

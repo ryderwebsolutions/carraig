@@ -105,7 +105,7 @@ export default function Gallery({ showHeading = true }: { showHeading?: boolean 
             href={business.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-[44px] items-center justify-center rounded-md border border-charcoal/20 px-6 text-sm font-semibold text-charcoal transition-colors hover:bg-charcoal/5"
+            className="inline-flex min-h-[44px] items-center justify-center border border-charcoal/20 px-6 text-sm font-semibold text-charcoal transition-colors hover:bg-charcoal/5"
           >
             See More on Instagram
           </a>
@@ -132,7 +132,7 @@ export default function Gallery({ showHeading = true }: { showHeading?: boolean 
             </svg>
           </button>
           <div
-            className="max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-lg bg-white"
+            className="max-h-[90vh] w-full max-w-3xl overflow-y-auto bg-white"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative aspect-[4/3] w-full bg-stone-100">
@@ -178,7 +178,7 @@ export default function Gallery({ showHeading = true }: { showHeading?: boolean 
                   playsInline
                   preload="none"
                   poster={activeProject.afterImage}
-                  className="mt-4 max-h-[50vh] w-full rounded-lg bg-black"
+                  className="mt-4 max-h-[50vh] w-full bg-black"
                 >
                   Your browser does not support embedded video.
                 </video>

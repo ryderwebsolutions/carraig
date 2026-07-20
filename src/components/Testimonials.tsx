@@ -17,7 +17,7 @@ export default function Testimonials() {
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t) => (
             <FadeUp key={t.id}>
-              <figure className="h-full rounded-lg border border-charcoal/15 bg-white p-6">
+              <figure className="h-full border border-charcoal/15 bg-white p-6">
                 {t.rating > 0 && (
                   <div className="mb-3 flex gap-0.5" aria-label={`${t.rating} out of 5 stars`}>
                     {Array.from({ length: 5 }).map((_, i) => (

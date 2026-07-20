@@ -36,7 +36,7 @@ export default function Process({ headingLevel = "h2" }: { headingLevel?: "h1" |
                 playsInline
                 preload="none"
                 poster="/images/video-posters/mixing-resin-quartz.jpg"
-                className="aspect-video w-full rounded-lg bg-black"
+                className="aspect-video w-full bg-black"
               >
                 Your browser does not support embedded video.
               </video>
@@ -49,7 +49,7 @@ export default function Process({ headingLevel = "h2" }: { headingLevel?: "h1" |
                 playsInline
                 preload="none"
                 poster="/images/video-posters/install-gated-driveway-laying.jpg"
-                className="aspect-video w-full rounded-lg bg-black"
+                className="aspect-video w-full bg-black"
               >
                 Your browser does not support embedded video.
               </video>
@@ -62,7 +62,7 @@ export default function Process({ headingLevel = "h2" }: { headingLevel?: "h1" |
                 playsInline
                 preload="none"
                 poster="/images/video-posters/finished-driveway-texture-closeup.jpg"
-                className="aspect-video w-full rounded-lg bg-black"
+                className="aspect-video w-full bg-black"
               >
                 Your browser does not support embedded video.
               </video>

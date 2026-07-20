@@ -18,13 +18,13 @@ export default function NotFound() {
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link
             href="/"
-            className="flex min-h-[48px] items-center justify-center rounded-md border border-charcoal/20 px-6 text-base font-semibold text-charcoal hover:bg-charcoal/5"
+            className="flex min-h-[48px] items-center justify-center border border-charcoal/20 px-6 text-base font-semibold text-charcoal hover:bg-charcoal/5"
           >
             Back to Home
           </Link>
           <Link
             href="/contact"
-            className="flex min-h-[48px] items-center justify-center rounded-md bg-terracotta px-6 text-base font-semibold text-white hover:bg-terracotta-dark"
+            className="flex min-h-[48px] items-center justify-center bg-terracotta px-6 text-base font-semibold text-white hover:bg-terracotta-dark"
           >
             Get a Free Quote
           </Link>

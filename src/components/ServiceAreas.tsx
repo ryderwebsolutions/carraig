@@ -24,7 +24,7 @@ export default function ServiceAreas({ headingLevel = "h2" }: { headingLevel?: "
         </FadeUp>
 
         <FadeUp delayMs={100}>
-          <div className="mx-auto mt-10 aspect-[16/10] max-w-4xl overflow-hidden rounded-lg border border-charcoal/10 sm:aspect-[16/8]">
+          <div className="mx-auto mt-10 aspect-[16/10] max-w-4xl overflow-hidden border border-charcoal/10 sm:aspect-[16/8]">
             <iframe
               src={mapSrc}
               title={`Map showing ${contact.areaServed}`}
