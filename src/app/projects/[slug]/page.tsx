@@ -88,7 +88,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             </h1>
             <p className="mt-3 max-w-xl text-charcoal/70">{project.description}</p>
 
-            <div className="relative mt-8 aspect-[16/10] w-full overflow-hidden rounded-2xl bg-stone-200 sm:aspect-[21/9]">
+            <div className="relative mt-8 aspect-[16/10] w-full overflow-hidden rounded-lg bg-stone-200 sm:aspect-[21/9]">
               <Image
                 src={project.afterImage}
                 alt={`${project.title} — ${project.description}`}
@@ -102,7 +102,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             {project.images.length > 1 && (
               <div className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-4">
                 {project.images.map((img) => (
-                  <div key={img} className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-stone-200">
+                  <div key={img} className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-stone-200">
                     <Image src={img} alt="" fill sizes="(min-width: 640px) 25vw, 33vw" className="object-cover" />
                   </div>
                 ))}
@@ -117,7 +117,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 playsInline
                 preload="none"
                 poster={project.afterImage}
-                className="mt-8 aspect-video w-full rounded-xl bg-black"
+                className="mt-8 aspect-video w-full rounded-lg bg-black"
               >
                 Your browser does not support embedded video.
               </video>

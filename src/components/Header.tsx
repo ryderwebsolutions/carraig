@@ -78,7 +78,7 @@ export default function Header() {
               </a>
               <Link
                 href="/contact"
-                className="whitespace-nowrap rounded-full bg-terracotta px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-terracotta-dark"
+                className="whitespace-nowrap rounded-md bg-terracotta px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-terracotta-dark"
               >
                 Get a Quote
               </Link>
@@ -89,7 +89,7 @@ export default function Header() {
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
-              className="flex h-11 w-11 items-center justify-center rounded-full text-charcoal xl:hidden"
+              className="flex h-11 w-11 items-center justify-center rounded-md text-charcoal xl:hidden"
             >
               {open ? (
                 <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2}>
@@ -122,7 +122,7 @@ export default function Header() {
           <div className="flex flex-col gap-3 border-t border-charcoal/10 p-4">
             <a
               href={telHref}
-              className="flex min-h-[44px] items-center justify-center rounded-full border border-charcoal/20 px-5 text-base font-semibold text-charcoal"
+              className="flex min-h-[44px] items-center justify-center rounded-md border border-charcoal/20 px-5 text-base font-semibold text-charcoal"
             >
               Call {contact.phone}
             </a>
@@ -130,14 +130,14 @@ export default function Header() {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex min-h-[44px] items-center justify-center rounded-full bg-moss px-5 text-base font-semibold text-white"
+              className="flex min-h-[44px] items-center justify-center rounded-md bg-moss px-5 text-base font-semibold text-white"
             >
               WhatsApp Us
             </a>
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="flex min-h-[44px] items-center justify-center rounded-full bg-terracotta px-5 text-base font-semibold text-white"
+              className="flex min-h-[44px] items-center justify-center rounded-md bg-terracotta px-5 text-base font-semibold text-white"
             >
               Get a Quote
             </Link>

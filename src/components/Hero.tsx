@@ -5,58 +5,61 @@ import { telHref, whatsappHref } from "@/lib/links";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[92vh] items-end overflow-hidden bg-charcoal text-white lg:min-h-[85vh] lg:items-center">
-      <Image
-        src="/images/projects/driveway-compass-medallion.jpg"
-        alt="A custom compass medallion hand-detailed into a resin bound driveway surface"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-charcoal/20" />
+    <section className="bg-stone-50">
+      <div className="mx-auto max-w-6xl px-4 pb-14 pt-28 sm:px-6 lg:grid lg:grid-cols-2 lg:items-center lg:gap-16 lg:pb-24 lg:pt-32">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-wide text-terracotta">
+            Resin Bound Surfacing
+          </p>
+          <h1 className="mt-3 max-w-lg font-heading text-4xl font-semibold leading-tight text-charcoal sm:text-5xl lg:text-[3.25rem]">
+            Premium Resin Bound Surfaces, Fitted Right
+          </h1>
+          <p className="mt-5 max-w-md text-lg text-charcoal/70">
+            Smooth, permeable, low-maintenance surfacing for driveways, patios, and pathways, based in{" "}
+            {contact.areaServed}.
+          </p>
 
-      <div className="relative mx-auto w-full max-w-6xl px-4 pb-14 pt-32 sm:px-6 lg:pb-24 lg:pt-24">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-terracotta">
-          Resin Bound Surfacing
-        </p>
-        <h1 className="max-w-2xl font-heading text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-          Premium Resin Bound Surfaces, Fitted Right
-        </h1>
-        <p className="mt-5 max-w-xl text-lg text-white/85 sm:text-xl">
-          Smooth, permeable, low-maintenance surfacing for driveways, patios, and pathways, based in{" "}
-          {contact.areaServed}.
-        </p>
+          <div className="mt-8">
+            <Link
+              href="/contact"
+              className="inline-flex min-h-[52px] items-center justify-center rounded-md bg-terracotta px-8 text-base font-semibold text-white transition-colors hover:bg-terracotta-dark"
+            >
+              Get a Free Quote
+            </Link>
+          </div>
 
-        <div className="mt-8">
-          <Link
-            href="/contact"
-            className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-terracotta px-8 text-base font-semibold text-white transition-transform hover:bg-terracotta-dark active:scale-[0.98]"
-          >
-            Get a Free Quote
-          </Link>
+          <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm font-medium text-charcoal/60">
+            <a href={telHref} className="underline underline-offset-4 hover:text-terracotta">
+              Call {contact.phone}
+            </a>
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:text-terracotta"
+            >
+              WhatsApp Us
+            </a>
+          </div>
+
+          <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-2.5 border-t border-charcoal/10 pt-6 text-sm text-charcoal/70 sm:flex sm:flex-wrap">
+            {trustBadges.map((badge) => (
+              <span key={badge} className="flex items-center gap-1.5">
+                <CheckIcon /> {badge}
+              </span>
+            ))}
+          </div>
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm font-medium text-white/70">
-          <a href={telHref} className="underline underline-offset-4 hover:text-white">
-            Call {contact.phone}
-          </a>
-          <a
-            href={whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-4 hover:text-white"
-          >
-            WhatsApp Us
-          </a>
-        </div>
-
-        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/75">
-          {trustBadges.map((badge) => (
-            <span key={badge} className="flex items-center gap-1.5">
-              <CheckIcon /> {badge}
-            </span>
-          ))}
+        <div className="relative mt-10 aspect-[4/3] w-full overflow-hidden rounded-lg border border-charcoal/10 lg:mt-0">
+          <Image
+            src="/images/projects/driveway-compass-medallion.jpg"
+            alt="A custom compass medallion hand-detailed into a resin bound driveway surface"
+            fill
+            priority
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover"
+          />
         </div>
       </div>
     </section>

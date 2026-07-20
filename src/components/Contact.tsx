@@ -17,7 +17,7 @@ export default function Contact({ headingLevel = "h2" }: { headingLevel?: "h1" |
         <div className="mt-8 flex flex-col gap-3 sm:mx-auto sm:max-w-sm">
           <a
             href={telHref}
-            className="flex min-h-[52px] items-center justify-center gap-3 rounded-xl border border-white/15 px-5 text-base font-medium hover:bg-white/5"
+            className="flex min-h-[52px] items-center justify-center gap-3 rounded-md border border-white/15 px-5 text-base font-medium hover:bg-white/5"
           >
             <PhoneIcon /> {contact.phone}
           </a>
@@ -25,14 +25,14 @@ export default function Contact({ headingLevel = "h2" }: { headingLevel?: "h1" |
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex min-h-[52px] items-center justify-center gap-3 rounded-xl border border-white/15 px-5 text-base font-medium hover:bg-white/5"
+            className="flex min-h-[52px] items-center justify-center gap-3 rounded-md border border-white/15 px-5 text-base font-medium hover:bg-white/5"
           >
             <WhatsAppIcon /> WhatsApp Us
           </a>
           {emailReady && (
             <a
               href={mailHref}
-              className="flex min-h-[52px] items-center justify-center gap-3 rounded-xl border border-white/15 px-5 text-base font-medium hover:bg-white/5"
+              className="flex min-h-[52px] items-center justify-center gap-3 rounded-md border border-white/15 px-5 text-base font-medium hover:bg-white/5"
             >
               <MailIcon /> {contact.email}
             </a>

@@ -105,7 +105,7 @@ export default function Gallery({ showHeading = true }: { showHeading?: boolean 
             href={business.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-charcoal/20 px-6 text-sm font-semibold text-charcoal transition-colors hover:bg-charcoal/5"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-md border border-charcoal/20 px-6 text-sm font-semibold text-charcoal transition-colors hover:bg-charcoal/5"
           >
             See More on Instagram
           </a>
@@ -125,14 +125,14 @@ export default function Gallery({ showHeading = true }: { showHeading?: boolean 
             ref={closeButtonRef}
             aria-label="Close"
             onClick={closeLightbox}
-            className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+            className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-md bg-white/10 text-white hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
           >
             <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2}>
               <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
             </svg>
           </button>
           <div
-            className="max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl bg-white"
+            className="max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-lg bg-white"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative aspect-[4/3] w-full bg-stone-100">
@@ -178,7 +178,7 @@ export default function Gallery({ showHeading = true }: { showHeading?: boolean 
                   playsInline
                   preload="none"
                   poster={activeProject.afterImage}
-                  className="mt-4 max-h-[50vh] w-full rounded-xl bg-black"
+                  className="mt-4 max-h-[50vh] w-full rounded-lg bg-black"
                 >
                   Your browser does not support embedded video.
                 </video>
