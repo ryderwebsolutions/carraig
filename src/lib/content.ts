@@ -212,6 +212,8 @@ export const projects: Project[] = [
       "/images/projects/pathway-pedestrian-island-3.jpg",
       "/images/projects/pathway-pedestrian-island-4.jpg",
       "/images/projects/pathway-pedestrian-island-5.jpg",
+      "/images/projects/pathway-pedestrian-island-6.jpg",
+      "/images/projects/pathway-pedestrian-island-7.jpg",
     ],
     description: "A raised pedestrian refuge finished in permeable resin bound surfacing.",
     video: "/videos/finished-pedestrian-island-pan.mp4",
