@@ -6,18 +6,18 @@ import { telHref, whatsappHref } from "@/lib/links";
 export default function Hero() {
   return (
     <section className="bg-stone-50">
-      <div className="flex justify-center pt-16 sm:pt-20">
+      <div className="flex justify-center pt-10 sm:pt-16">
         <Image
           src="/images/logo/logo-wordmark.png"
           alt="Carraig Álainn Resin Surfaces"
           width={1260}
           height={1260}
           priority
-          className="h-auto w-52 sm:w-64 lg:w-72"
+          className="h-auto w-full sm:w-[clamp(22rem,42vw,46rem)]"
         />
       </div>
 
-      <div className="mx-auto max-w-2xl px-4 pb-16 pt-8 text-center sm:px-6 sm:pb-20">
+      <div className="mx-auto max-w-2xl px-4 pb-16 pt-4 text-center sm:px-6 sm:pb-20">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-charcoal/50">
           Resin Bound Surfacing
         </p>
