@@ -6,18 +6,18 @@ import { telHref, whatsappHref } from "@/lib/links";
 export default function Hero() {
   return (
     <section className="bg-stone-50">
-      <div className="relative aspect-[4/3] w-full sm:aspect-[16/9] lg:aspect-[21/9]">
+      <div className="flex justify-center pt-16 sm:pt-20">
         <Image
-          src="/images/projects/driveway-compass-medallion.jpg"
-          alt="A custom compass medallion hand-detailed into a resin bound driveway surface"
-          fill
+          src="/images/logo/logo-wordmark.png"
+          alt="Carraig Álainn Resin Surfaces"
+          width={1260}
+          height={1260}
           priority
-          sizes="100vw"
-          className="object-cover"
+          className="h-auto w-52 sm:w-64 lg:w-72"
         />
       </div>
 
-      <div className="mx-auto max-w-2xl px-4 py-16 text-center sm:px-6 sm:py-20">
+      <div className="mx-auto max-w-2xl px-4 pb-16 pt-8 text-center sm:px-6 sm:pb-20">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-charcoal/50">
           Resin Bound Surfacing
         </p>
