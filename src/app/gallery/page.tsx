@@ -22,7 +22,7 @@ export default function GalleryPage() {
     <>
       <Header />
       <main id="main-content" className="flex-1 pb-16 lg:pb-0">
-        <div className="bg-charcoal py-16 text-white sm:py-20">
+        <div className="bg-charcoal py-20 text-white sm:py-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <h1 className="font-heading text-3xl font-semibold sm:text-4xl">Our Work</h1>
             <p className="mt-3 max-w-xl text-white/70">

@@ -80,7 +80,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </div>
         </div>
 
-        <section className="bg-stone-50 pb-16 pt-8 sm:pb-24 sm:pt-10">
+        <section className="bg-stone-50 py-20 sm:py-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <p className="text-sm font-semibold uppercase tracking-wide text-terracotta">{service.title}</p>
             <h1 className="mt-2 max-w-2xl font-heading text-3xl font-semibold text-charcoal sm:text-4xl">
