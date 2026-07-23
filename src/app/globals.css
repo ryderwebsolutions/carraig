@@ -43,16 +43,23 @@ h1, h2, h3, h4 {
   font-family: var(--font-heading), Georgia, serif;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 /* Scroll fade-up animation */
 .fade-up {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(32px) scale(0.98);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .fade-up.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -61,6 +68,12 @@ h1, h2, h3, h4 {
     transform: none;
     transition: none;
   }
+}
+
+/* Sticky header gains depth once the page has scrolled */
+.header-scrolled {
+  box-shadow: 0 8px 24px -18px rgba(34, 36, 42, 0.35);
+  border-color: transparent;
 }
 
 /* Visible keyboard focus ring, consistent across the site */

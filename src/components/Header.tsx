@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { business, contact } from "@/lib/content";
@@ -19,10 +19,27 @@ const navLinks = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 8);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const visible = scrolled || open;
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-stone-50/95 backdrop-blur border-b border-charcoal/10">
+      <header
+        inert={!visible ? true : undefined}
+        className={`fixed inset-x-0 top-0 z-50 border-b border-charcoal/10 bg-stone-50/95 backdrop-blur transition-all duration-300 ${
+          visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+        } ${scrolled ? "header-scrolled" : ""}`}
+      >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
           <Link href="/" className="flex shrink-0 items-center gap-2.5">
             <Image

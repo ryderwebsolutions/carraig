@@ -29,19 +29,19 @@ export default function Faqs({ headingLevel = "h2" }: { headingLevel?: "h1" | "h
           </Heading>
         </FadeUp>
 
-        <FadeUp delayMs={80}>
-          <div className="mt-8 divide-y divide-charcoal/10 border-t border-b border-charcoal/10">
-            {faqs.map((faq) => (
-              <details key={faq.question} className="group py-5">
+        <div className="mt-8 divide-y divide-charcoal/10 border-t border-b border-charcoal/10">
+          {faqs.map((faq, i) => (
+            <FadeUp key={faq.question} delayMs={80 + i * 90}>
+              <details className="group py-5">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-heading text-lg font-semibold text-charcoal marker:content-none">
                   {faq.question}
                   <ChevronIcon className="h-5 w-5 shrink-0 text-terracotta transition-transform duration-200 group-open:rotate-180" />
                 </summary>
                 <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-charcoal/70">{faq.answer}</p>
               </details>
-            ))}
-          </div>
-        </FadeUp>
+            </FadeUp>
+          ))}
+        </div>
       </div>
     </section>
   );

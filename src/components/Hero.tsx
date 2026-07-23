@@ -18,10 +18,7 @@ export default function Hero() {
       </div>
 
       <div className="mx-auto max-w-2xl px-4 pb-16 pt-4 text-center sm:px-6 sm:pb-20">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-charcoal/50">
-          Resin Bound Surfacing
-        </p>
-        <h1 className="mt-5 font-heading text-4xl font-medium leading-[1.15] text-charcoal sm:text-5xl">
+        <h1 className="font-heading text-4xl font-medium leading-[1.15] text-charcoal sm:text-5xl">
           Premium Resin Bound Surfaces, Fitted Right
         </h1>
         <p className="mx-auto mt-6 max-w-md text-lg text-charcoal/70">

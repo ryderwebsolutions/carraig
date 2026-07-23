@@ -14,22 +14,22 @@ export default function Services({ headingLevel = "h2" }: { headingLevel?: "h1" 
           </Heading>
         </FadeUp>
 
-        <FadeUp delayMs={80}>
-          <ul className="mt-10 divide-y divide-charcoal/10 border-t border-charcoal/10 sm:mt-12">
-            {services.map((service) => (
-              <li key={service.id} className="py-6">
-                <Link href={service.slug} className="group block">
-                  <h3 className="font-heading text-lg font-semibold text-charcoal group-hover:text-terracotta sm:text-xl">
+        <ul className="mt-10 divide-y divide-charcoal/10 border-t border-charcoal/10 sm:mt-12">
+          {services.map((service, i) => (
+            <li key={service.id}>
+              <FadeUp delayMs={80 + i * 90}>
+                <Link href={service.slug} className="group block py-6">
+                  <h3 className="font-heading text-lg font-semibold text-charcoal transition-colors group-hover:text-terracotta sm:text-xl">
                     {service.title}
                   </h3>
                   <p className="mt-1.5 max-w-2xl text-[15px] leading-relaxed text-charcoal/70 sm:text-base">
                     {service.description}
                   </p>
                 </Link>
-              </li>
-            ))}
-          </ul>
-        </FadeUp>
+              </FadeUp>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

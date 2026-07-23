@@ -13,16 +13,14 @@ export default function WhyUs({ headingLevel = "h2" }: { headingLevel?: "h1" | "
           </Heading>
         </FadeUp>
 
-        <FadeUp delayMs={80}>
-          <dl className="mt-10 grid gap-x-10 gap-y-8 sm:mt-12 sm:grid-cols-2">
-            {whyUsPoints.map((point) => (
-              <div key={point.title}>
-                <dt className="font-heading text-lg font-semibold text-charcoal">{point.title}</dt>
-                <dd className="mt-1 text-[15px] leading-relaxed text-charcoal/70">{point.description}</dd>
-              </div>
-            ))}
-          </dl>
-        </FadeUp>
+        <dl className="mt-10 grid gap-x-10 gap-y-8 sm:mt-12 sm:grid-cols-2">
+          {whyUsPoints.map((point, i) => (
+            <FadeUp key={point.title} delayMs={80 + i * 90} className="block">
+              <dt className="font-heading text-lg font-semibold text-charcoal">{point.title}</dt>
+              <dd className="mt-1 text-[15px] leading-relaxed text-charcoal/70">{point.description}</dd>
+            </FadeUp>
+          ))}
+        </dl>
       </div>
     </section>
   );

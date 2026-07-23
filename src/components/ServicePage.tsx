@@ -60,19 +60,19 @@ export default function ServicePage({ serviceId }: { serviceId: ServiceId }) {
 
       <section className="bg-stone-50 py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <FadeUp>
-            <ul className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
-              {content.benefits.map((benefit) => (
-                <li key={benefit.title} className="flex gap-4">
+          <ul className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+            {content.benefits.map((benefit, i) => (
+              <li key={benefit.title}>
+                <FadeUp delayMs={i * 90} className="flex gap-4">
                   <ServiceIcon id={serviceId} className="mt-1 h-6 w-6 shrink-0 text-terracotta" />
                   <div>
                     <h3 className="font-heading text-lg font-semibold text-charcoal">{benefit.title}</h3>
                     <p className="mt-1.5 text-[15px] leading-relaxed text-charcoal/70">{benefit.description}</p>
                   </div>
-                </li>
-              ))}
-            </ul>
-          </FadeUp>
+                </FadeUp>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
